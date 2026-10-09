@@ -1,0 +1,15 @@
+{
+  "checks_passed": true,
+  "models": 14,
+  "countries": 195,
+  "factor_candidates": 43,
+  "matched_versions": 10,
+  "complete_v13_paths": 193,
+  "anchors_exact": true,
+  "heldout_only_validation": true,
+  "metrics_reproduce_frozen_country_scores": true,
+  "missing_values_preserved": true,
+  "model_refits": 0,
+  "source_files": 58,
+  "data_sha256": "91e409b401da3ece46665f6ef60f532285dee6fa8a35540cb945ebf1f3ab282c"
+}

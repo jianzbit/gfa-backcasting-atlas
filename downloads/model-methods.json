@@ -1,0 +1,1738 @@
+[
+  {
+    "id": "v01",
+    "version": "0.1",
+    "title": "Endpoint model core",
+    "phase": "Foundation",
+    "date": "2026-10-07",
+    "description": "A reproducible two-stage interface: estimate the five-year change from GHSL endpoints, then distribute it over the historical years.",
+    "equation": "C = log(S2020 / S2015); r\u1d67 = C / 5",
+    "fitting": "Unit response of floorspace to horizontal built-surface change. Uniform log timing when no complete activity signal exists. No learned response coefficients.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "horizontal prior"
+      ]
+    },
+    "parameters": {},
+    "training": [],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": false,
+    "source_folder": "2026-10-07-model-core",
+    "code_path": "v7/backcast_model_core.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-07-model-core",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_model_core.py"
+  },
+  {
+    "id": "v02",
+    "version": "0.2",
+    "title": "Construction activity timing",
+    "phase": "Foundation",
+    "date": "2026-10-07",
+    "description": "Keeps the endpoint model and uses qualified construction production indices to time net area additions where available.",
+    "equation": "F\u209c = F2015 + (F2020 \u2212 F2015) \u00d7 cumulative activity share",
+    "fitting": "Complete positive activity series distribute positive net additions; net declines and incomplete signals retain uniform log timing. Repairs, completion lags and demolition are unresolved.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "horizontal prior"
+      ],
+      "building_construction_volume_index": [
+        "activity timing"
+      ]
+    },
+    "parameters": {},
+    "training": [],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": false,
+    "source_folder": "2026-10-07-model-core-v02",
+    "code_path": "v7/backcast_annual_activity.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-07-model-core-v02",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_annual_activity.py"
+  },
+  {
+    "id": "v03",
+    "version": "0.3",
+    "title": "Shared linear change",
+    "phase": "Shared response",
+    "date": "2026-10-07",
+    "description": "The preserved default research output. One global ridge response uses surface, population and real GDP per capita changes.",
+    "equation": "r\u1d67 = xsurface,\u1d67 + standardized drivers\u1d67 \u00b7 \u03b8",
+    "fitting": "Country-balanced ridge strength 1; no fitted intercept or country-specific coefficients. The unit surface response is the prior. Native stock changes provide weak labels.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "shared predictor",
+        "horizontal prior"
+      ],
+      "annual_log_population_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "shared predictor"
+      ],
+      "true": [
+        "shared predictor"
+      ]
+    },
+    "parameters": {
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "FIN",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "ridge_strength": 1.0,
+      "coefficients": [
+        1.0624892192922422,
+        0.21159226275594648,
+        -0.01282713836334419
+      ]
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "FIN",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Preserved default",
+    "matched_comparison": true,
+    "source_folder": "2026-10-07-shared-change",
+    "code_path": "v7/backcast_shared_change.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-07-shared-change",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_shared_change.py"
+  },
+  {
+    "id": "v04",
+    "version": "0.4",
+    "title": "Anchor-relative path loss",
+    "phase": "Shared response",
+    "date": "2026-10-07",
+    "description": "Changes the fitting objective from annual rates to cumulative historical paths relative to the fixed 2020 endpoint.",
+    "equation": "min\u03b8 \u03a3country \u03a3\u209c [\u03a3\u1d67>\u209c (r\u0302\u1d67 \u2212 r\u1d67)]\u00b2 + ||\u03b8||\u00b2",
+    "fitting": "Same three drivers and shared ridge structure as v0.3. Its archived seven-country results are shown separately; it has no matched-six result in the latest frozen comparison.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "shared predictor",
+        "horizontal prior"
+      ],
+      "annual_log_population_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "shared predictor"
+      ],
+      "true": [
+        "shared predictor"
+      ]
+    },
+    "parameters": {
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "FIN",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "ridge_strength": 1.0,
+      "coefficients": [
+        1.085965816556929,
+        0.19347662046032207,
+        -0.06568435391948782
+      ]
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "FIN",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": false,
+    "source_folder": "2026-10-07-shared-path-loss",
+    "code_path": "v7/backcast_shared_change.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-07-shared-path-loss",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_shared_change.py"
+  },
+  {
+    "id": "v05",
+    "version": "0.5",
+    "title": "Nonlinear residual kernel",
+    "phase": "Shared response",
+    "date": "2026-10-07",
+    "description": "Allows a shared nonlinear residual around the horizontal-change prior without national correction coefficients.",
+    "equation": "r\u1d67 = xsurface,\u1d67 + K(x\u1d67, Xtrain) \u00b7 \u03b1",
+    "fitting": "Three-driver RBF kernel; fixed length scale 1 and ridge 1. Training-only RMS scales and country-balanced weights. This version number is unrelated to the earlier 0.50 trend-weight candidate.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "shared predictor",
+        "horizontal prior"
+      ],
+      "annual_log_population_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "shared predictor"
+      ],
+      "true": [
+        "shared predictor"
+      ]
+    },
+    "parameters": {
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "FIN",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "ridge_strength": 1.0,
+      "length_scale": 1.0
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "FIN",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-07-shared-kernel",
+    "code_path": "v7/backcast_shared_kernel.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-07-shared-kernel",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_shared_kernel.py"
+  },
+  {
+    "id": "v06",
+    "version": "0.6",
+    "title": "Two-timescale kernel",
+    "phase": "Shared response",
+    "date": "2026-10-07",
+    "description": "Separates country mean changes from within-country annual deviations, with a timing correction that sums to zero.",
+    "equation": "r\u1d67 = xsurface,\u1d67 + f(mean x) + g(x\u1d67 \u2212 mean x) \u2212 mean g",
+    "fitting": "Two fixed RBF components with ridge 1 and length 1. Five complete intervals required. The latest common-six protocol does not contain a refitted v0.6 comparator.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "shared predictor",
+        "horizontal prior"
+      ],
+      "annual_log_population_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "shared predictor"
+      ]
+    },
+    "parameters": {
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "FIN",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "ridge_strength": 1.0,
+      "length_scale": 1.0
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "FIN",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": false,
+    "source_folder": "2026-10-07-shared-timescale",
+    "code_path": "v7/backcast_shared_timescale.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-07-shared-timescale",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_shared_timescale.py"
+  },
+  {
+    "id": "v07",
+    "version": "0.7",
+    "title": "Development context",
+    "phase": "Context & observations",
+    "date": "2026-10-08",
+    "description": "Adds development-stage information so similar economic changes can have different shared responses in different stock contexts.",
+    "equation": "r\u1d67 = xsurface,\u1d67 + RBF(dynamic changes, stock context)",
+    "fitting": "Six predictors: surface/population/real-GDP growth plus real GDP per capita level, urban fraction and built surface per capita. Fixed ridge and kernel length; complete mandatory context required.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "shared predictor",
+        "horizontal prior"
+      ],
+      "annual_log_population_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "shared predictor"
+      ],
+      "interval_log_real_gdp_per_capita_level": [
+        "shared predictor"
+      ],
+      "interval_urban_population_fraction": [
+        "shared predictor"
+      ],
+      "interval_log_built_surface_per_capita_proxy": [
+        "shared predictor"
+      ],
+      "true": [
+        "shared predictor"
+      ]
+    },
+    "parameters": {
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "FIN",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "ridge_strength": 1.0,
+      "length_scale": 1.0
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "FIN",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-08-shared-context-stock",
+    "code_path": "v7/backcast_shared_context_stock.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-08-shared-context-stock",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_shared_context_stock.py"
+  },
+  {
+    "id": "v08",
+    "version": "0.8",
+    "title": "Annual urban demand & lights",
+    "phase": "Context & observations",
+    "date": "2026-10-08",
+    "description": "Adds derived urban-population changes, constant-price PPP context and source-qualified annual VIIRS radiance.",
+    "equation": "K = Kbase + Mcontext Kcontext Mcontext + Mlight Klight Mlight",
+    "fitting": "Masked additive PSD kernels: base three drivers, four context/demand coordinates and one light coordinate. Optional missing branches contribute no fabricated observations. Fixed ridge 1 and RBF length 1.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "shared predictor",
+        "horizontal prior"
+      ],
+      "annual_log_population_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "shared predictor"
+      ],
+      "annual_log_urban_population_change": [
+        "shared predictor"
+      ],
+      "interval_log_ppp_gdp_per_capita_level": [
+        "shared predictor"
+      ],
+      "interval_urban_population_fraction": [
+        "shared predictor"
+      ],
+      "interval_log_built_surface_per_capita_proxy": [
+        "shared predictor"
+      ],
+      "annual_log1p_viirs_radiance_change": [
+        "shared predictor"
+      ]
+    },
+    "parameters": {
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "FIN",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "ridge_strength": 1.0,
+      "length_scale": 1.0
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "FIN",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-08-shared-annual-observations",
+    "code_path": "v7/backcast_shared_annual_observations.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-08-shared-annual-observations",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_shared_annual_observations.py"
+  },
+  {
+    "id": "v09_compact",
+    "version": "0.9 Compact",
+    "title": "Compact mechanism pooling",
+    "phase": "Factor integration",
+    "date": "2026-10-08",
+    "description": "Uses the expanded source library through four compact shared mechanism coordinates.",
+    "equation": "r\u1d67 = horizontal proxy\u1d67 + \u03a3group \u03b8group mean[tanh(zfactor,\u1d67)]",
+    "fitting": "Population-demand proxy, UNSD construction activity, real GDP growth and VIIRS lights. Fixed scaling, eligibility rules, group denominators and ridge regularization. Four fitted group coefficients.",
+    "factors": {
+      "population_demand_proxy": [
+        "shared predictor"
+      ],
+      "annual_log_real_construction_value_added_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "shared predictor"
+      ],
+      "annual_log1p_viirs_radiance_change": [
+        "shared predictor"
+      ],
+      "annual_log_urban_population_change": [
+        "population proxy"
+      ],
+      "annual_log_population_change": [
+        "population proxy fallback"
+      ],
+      "annual_log_surface_change_proxy": [
+        "horizontal prior"
+      ]
+    },
+    "parameters": {
+      "ridge_strength": 1.0,
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "FIN",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "coefficients": [
+        0.0075094966629637655,
+        0.00016838298477666485,
+        -0.002739486580949324,
+        0.0013058929914737559
+      ],
+      "effective_degrees_of_freedom": 1.8911690914910917
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "FIN",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-08-expanded-factors-v09",
+    "code_path": "v7/backcast_expanded_shared.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-08-expanded-factors-v09",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_expanded_shared.py"
+  },
+  {
+    "id": "v09_expanded",
+    "version": "0.9 Expanded",
+    "title": "Expanded mechanism pooling",
+    "phase": "Factor integration",
+    "date": "2026-10-08",
+    "description": "Compresses qualified members of the 43-factor library into six shared groups rather than a high-dimensional kernel.",
+    "equation": "r\u1d67 = horizontal proxy\u1d67 + \u03a3six groups \u03b8group mean[tanh(zfactor,\u1d67)]",
+    "fitting": "Remote, construction, population, economic, stock-risk and nightlight groups. Eligibility is learned from training support under fixed thresholds; unavailable candidates are excluded. Six fitted group coefficients.",
+    "factors": {
+      "annual_log_surface_change_proxy": [
+        "shared predictor",
+        "horizontal prior"
+      ],
+      "annual_log_impervious_area_change": [
+        "shared predictor"
+      ],
+      "nonres_volume_share": [
+        "shared predictor"
+      ],
+      "urban_core_building_density": [
+        "shared predictor"
+      ],
+      "core_periphery_endpoint_growth_difference": [
+        "shared predictor"
+      ],
+      "interval_log_built_surface_per_capita_proxy": [
+        "shared predictor"
+      ],
+      "annual_log_real_construction_value_added_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_construction_value_added_change_lag1": [
+        "shared predictor"
+      ],
+      "annual_log_real_gfcf_change": [
+        "shared predictor"
+      ],
+      "annual_log_residential_investment_change": [
+        "shared predictor"
+      ],
+      "annual_log_other_buildings_structures_investment_change": [
+        "shared predictor"
+      ],
+      "annual_log_building_permits_change": [
+        "shared predictor"
+      ],
+      "annual_log_construction_employment_change": [
+        "shared predictor"
+      ],
+      "annual_log_cement_production_change": [
+        "shared predictor"
+      ],
+      "annual_log_population_change": [
+        "shared predictor"
+      ],
+      "annual_log_urban_population_change": [
+        "shared predictor"
+      ],
+      "annual_log_working_age_population_change": [
+        "shared predictor"
+      ],
+      "net_migration_per1000_population": [
+        "shared predictor"
+      ],
+      "interval_urban_population_fraction": [
+        "shared predictor"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "shared predictor"
+      ],
+      "interval_log_ppp_gdp_per_capita_level": [
+        "shared predictor"
+      ],
+      "annual_log_real_services_va_change": [
+        "shared predictor"
+      ],
+      "annual_log_real_manufacturing_va_change": [
+        "shared predictor"
+      ],
+      "private_credit_gdp_share_change_fraction": [
+        "shared predictor"
+      ],
+      "annual_log_construction_cost_change": [
+        "shared predictor"
+      ],
+      "older_built_surface_share": [
+        "shared predictor"
+      ],
+      "disaster_affected_per1000_population": [
+        "shared predictor"
+      ],
+      "conflict_deaths_per1000_population": [
+        "shared predictor"
+      ],
+      "annual_log1p_viirs_radiance_change": [
+        "shared predictor"
+      ],
+      "annual_log1p_built_weighted_viirs_change": [
+        "shared predictor"
+      ],
+      "annual_log1p_urban_core_viirs_change": [
+        "shared predictor"
+      ]
+    },
+    "parameters": {
+      "ridge_strength": 1.0,
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "FIN",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "coefficients": [
+        -0.0039955004889368085,
+        0.0014865759794408578,
+        0.00911442017635904,
+        0.0023714690676152994,
+        -0.0028553942567049054,
+        -0.00013742133043344274
+      ],
+      "effective_degrees_of_freedom": 2.056134017946685
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "FIN",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-08-expanded-factors-v09",
+    "code_path": "v7/backcast_expanded_shared.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-08-expanded-factors-v09",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_expanded_shared.py"
+  },
+  {
+    "id": "v10",
+    "version": "0.10",
+    "title": "Cumulative change + signed timing",
+    "phase": "Unified dynamics",
+    "date": "2026-10-08",
+    "description": "Builds separate shared predictors for five-year net change and the zero-sum annual timing pattern.",
+    "equation": "C = CGHSL + pooled cumulative correction; r\u1d67 = C/5 + zero-sum timing\u1d67",
+    "fitting": "Three cumulative coordinates: demand, production and background. Two annual coordinates: activity and demand shock. Training-only scaling, fixed ridge, first-difference smoothing and no annual timing from static features.",
+    "factors": {
+      "annual_log_impervious_area_change": [
+        "cumulative",
+        "annual"
+      ],
+      "nonres_volume_share": [
+        "cumulative"
+      ],
+      "urban_core_building_density": [
+        "cumulative"
+      ],
+      "core_periphery_endpoint_growth_difference": [
+        "cumulative"
+      ],
+      "annual_log_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_urban_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_working_age_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "net_migration_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "cumulative",
+        "annual"
+      ],
+      "interval_log_ppp_gdp_per_capita_level": [
+        "cumulative"
+      ],
+      "interval_urban_population_fraction": [
+        "cumulative"
+      ],
+      "interval_log_built_surface_per_capita_proxy": [
+        "cumulative"
+      ],
+      "annual_log_real_services_va_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_manufacturing_va_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_construction_value_added_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_construction_value_added_change_lag1": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_construction_employment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_cement_production_change": [
+        "cumulative"
+      ],
+      "annual_log_real_gfcf_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_residential_investment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_other_buildings_structures_investment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_building_permits_change": [
+        "cumulative",
+        "annual"
+      ],
+      "private_credit_gdp_share_change_fraction": [
+        "cumulative",
+        "annual"
+      ],
+      "real_interest_rate_fraction": [
+        "cumulative"
+      ],
+      "annual_log_construction_cost_change": [
+        "cumulative",
+        "annual"
+      ],
+      "disaster_affected_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "conflict_deaths_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "older_built_surface_share": [
+        "cumulative"
+      ],
+      "annual_log1p_viirs_radiance_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log1p_built_weighted_viirs_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log1p_urban_core_viirs_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_surface_change_proxy": [
+        "horizontal prior"
+      ]
+    },
+    "parameters": {
+      "families": {
+        "land_observation": [
+          "annual_log_impervious_area_change",
+          "annual_log_building_presence_change",
+          "annual_log_building_count_change",
+          "annual_log_building_height_change",
+          "annual_log_building_volume_proxy_change"
+        ],
+        "morphology": [
+          "nonres_volume_share",
+          "urban_core_building_density",
+          "core_periphery_endpoint_growth_difference"
+        ],
+        "demography": [
+          "annual_log_population_change",
+          "annual_log_urban_population_change",
+          "annual_log_working_age_population_change",
+          "annual_log_household_count_change",
+          "annual_log_urban_population_density_change"
+        ],
+        "household_background": [
+          "average_household_size"
+        ],
+        "migration": [
+          "net_migration_per1000_population"
+        ],
+        "macro_growth": [
+          "annual_log_real_gdp_per_capita_change"
+        ],
+        "development_background": [
+          "interval_log_ppp_gdp_per_capita_level",
+          "interval_urban_population_fraction",
+          "interval_log_built_surface_per_capita_proxy"
+        ],
+        "sector_capacity": [
+          "annual_log_real_services_va_change",
+          "annual_log_real_manufacturing_va_change"
+        ],
+        "construction_activity": [
+          "annual_log_real_construction_value_added_change",
+          "annual_log_real_construction_value_added_change_lag1",
+          "annual_log_construction_employment_change",
+          "annual_log_cement_production_change"
+        ],
+        "investment_pipeline": [
+          "annual_log_real_gfcf_change",
+          "annual_log_residential_investment_change",
+          "annual_log_nonresidential_building_investment_change",
+          "annual_log_other_buildings_structures_investment_change",
+          "annual_log_building_permits_change",
+          "annual_log_building_completions_change"
+        ],
+        "financial_conditions": [
+          "annual_log_private_sector_credit_change",
+          "private_credit_gdp_share_change_fraction",
+          "real_interest_rate_fraction",
+          "annual_log_construction_cost_change"
+        ],
+        "loss_risk": [
+          "disaster_affected_per1000_population",
+          "conflict_deaths_per1000_population"
+        ],
+        "stock_background": [
+          "older_built_surface_share"
+        ],
+        "lights": [
+          "annual_log1p_viirs_radiance_change",
+          "annual_log1p_built_weighted_viirs_change",
+          "annual_log1p_urban_core_viirs_change"
+        ]
+      },
+      "total_axes": {
+        "demand": [
+          "demography",
+          "migration",
+          "macro_growth"
+        ],
+        "production": [
+          "land_observation",
+          "construction_activity",
+          "investment_pipeline",
+          "sector_capacity",
+          "financial_conditions",
+          "lights"
+        ],
+        "background": [
+          "morphology",
+          "household_background",
+          "development_background",
+          "stock_background",
+          "loss_risk"
+        ]
+      },
+      "timing_axes": {
+        "activity": [
+          "land_observation",
+          "construction_activity",
+          "investment_pipeline",
+          "lights"
+        ],
+        "demand_shock": [
+          "demography",
+          "migration",
+          "macro_growth",
+          "sector_capacity",
+          "financial_conditions",
+          "loss_risk"
+        ]
+      },
+      "total_ridge_strength": 1.0,
+      "timing_ridge_strength": 4.0,
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "total_coefficients": [
+        0.008185798071993789,
+        0.001476965982065123,
+        0.0019449117846714733
+      ],
+      "timing_coefficients": [
+        9.264627272113285e-05,
+        2.174970331503385e-05
+      ],
+      "total_effective_degrees_of_freedom": 0.41103126442585414,
+      "timing_effective_degrees_of_freedom": 0.02057181367225154
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-08-shared-cumulative-timing-v10",
+    "code_path": "v7/backcast_cumulative_timing.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-08-shared-cumulative-timing-v10",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_cumulative_timing.py"
+  },
+  {
+    "id": "v11",
+    "version": "0.11",
+    "title": "Quality-conditioned dynamic states",
+    "phase": "Unified dynamics",
+    "date": "2026-10-08",
+    "description": "Treats qualified GLC annual horizontal changes as a separate partial proxy observation of latent timing.",
+    "equation": "r\u1d67 = C/5 + \u03b7\u1d67; \u03a3\u03b7\u1d67 = 0; \u03b7 = conditional smooth-state solve",
+    "fitting": "Three cumulative plus three annual coefficients. Fixed source/family reliability, partial-observation operators, GLC relative precision 0.50 and smoothness 1. Working covariances are not calibrated GFA uncertainty.",
+    "factors": {
+      "annual_log_impervious_area_change": [
+        "cumulative",
+        "proxy observation"
+      ],
+      "nonres_volume_share": [
+        "cumulative"
+      ],
+      "urban_core_building_density": [
+        "cumulative"
+      ],
+      "core_periphery_endpoint_growth_difference": [
+        "cumulative"
+      ],
+      "annual_log_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_urban_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_working_age_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "net_migration_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "cumulative",
+        "annual"
+      ],
+      "interval_log_ppp_gdp_per_capita_level": [
+        "cumulative"
+      ],
+      "interval_urban_population_fraction": [
+        "cumulative"
+      ],
+      "interval_log_built_surface_per_capita_proxy": [
+        "cumulative"
+      ],
+      "annual_log_real_services_va_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_manufacturing_va_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_construction_value_added_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_construction_employment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_cement_production_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_gfcf_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_residential_investment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_other_buildings_structures_investment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_building_permits_change": [
+        "cumulative",
+        "annual"
+      ],
+      "private_credit_gdp_share_change_fraction": [
+        "cumulative",
+        "annual"
+      ],
+      "real_interest_rate_fraction": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_construction_cost_change": [
+        "cumulative",
+        "annual"
+      ],
+      "disaster_affected_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "conflict_deaths_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "older_built_surface_share": [
+        "cumulative"
+      ],
+      "annual_log1p_viirs_radiance_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log1p_built_weighted_viirs_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log1p_urban_core_viirs_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_surface_change_proxy": [
+        "horizontal prior"
+      ]
+    },
+    "parameters": {
+      "total_axes": {
+        "demand": [
+          "demography",
+          "migration",
+          "macro_growth"
+        ],
+        "production": [
+          "land_observation",
+          "construction_activity",
+          "investment_pipeline",
+          "sector_capacity",
+          "financial_conditions",
+          "lights"
+        ],
+        "background": [
+          "morphology",
+          "household_background",
+          "development_background",
+          "stock_background",
+          "loss_risk"
+        ]
+      },
+      "timing_axes": {
+        "activity": [
+          "land_observation",
+          "construction_activity",
+          "investment_pipeline",
+          "lights"
+        ],
+        "demand_shock": [
+          "demography",
+          "migration",
+          "macro_growth",
+          "sector_capacity",
+          "financial_conditions",
+          "loss_risk"
+        ]
+      },
+      "families": {
+        "land_observation": [
+          "annual_log_impervious_area_change",
+          "annual_log_building_presence_change",
+          "annual_log_building_count_change",
+          "annual_log_building_height_change",
+          "annual_log_building_volume_proxy_change"
+        ],
+        "morphology": [
+          "nonres_volume_share",
+          "urban_core_building_density",
+          "core_periphery_endpoint_growth_difference"
+        ],
+        "demography": [
+          "annual_log_population_change",
+          "annual_log_urban_population_change",
+          "annual_log_working_age_population_change",
+          "annual_log_household_count_change",
+          "annual_log_urban_population_density_change"
+        ],
+        "household_background": [
+          "average_household_size"
+        ],
+        "migration": [
+          "net_migration_per1000_population"
+        ],
+        "macro_growth": [
+          "annual_log_real_gdp_per_capita_change"
+        ],
+        "development_background": [
+          "interval_log_ppp_gdp_per_capita_level",
+          "interval_urban_population_fraction",
+          "interval_log_built_surface_per_capita_proxy"
+        ],
+        "sector_capacity": [
+          "annual_log_real_services_va_change",
+          "annual_log_real_manufacturing_va_change"
+        ],
+        "construction_activity": [
+          "annual_log_real_construction_value_added_change",
+          "annual_log_real_construction_value_added_change_lag1",
+          "annual_log_construction_employment_change",
+          "annual_log_cement_production_change"
+        ],
+        "investment_pipeline": [
+          "annual_log_real_gfcf_change",
+          "annual_log_residential_investment_change",
+          "annual_log_nonresidential_building_investment_change",
+          "annual_log_other_buildings_structures_investment_change",
+          "annual_log_building_permits_change",
+          "annual_log_building_completions_change"
+        ],
+        "financial_conditions": [
+          "annual_log_private_sector_credit_change",
+          "private_credit_gdp_share_change_fraction",
+          "real_interest_rate_fraction",
+          "annual_log_construction_cost_change"
+        ],
+        "loss_risk": [
+          "disaster_affected_per1000_population",
+          "conflict_deaths_per1000_population"
+        ],
+        "stock_background": [
+          "older_built_surface_share"
+        ],
+        "lights": [
+          "annual_log1p_viirs_radiance_change",
+          "annual_log1p_built_weighted_viirs_change",
+          "annual_log1p_urban_core_viirs_change"
+        ]
+      },
+      "coefficients": 6,
+      "regularization": "one unit Gaussian/ridge penalty per shared dimension; summed independent country losses; not divided by number of countries",
+      "GLC_relative_precision": 0.5,
+      "annual_smoothness": 1.0,
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "total_coefficients": [
+        0.7636126977122923,
+        -0.07223719179496525,
+        0.08312925108647437
+      ],
+      "timing_coefficients": [
+        0.6315475224880156,
+        -0.005522898389065929,
+        -0.020043900965474655
+      ],
+      "total_effective_degrees_of_freedom": 1.5263858630009441,
+      "timing_effective_degrees_of_freedom": 1.0420013003076873
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-08-shared-observation-dynamic-v11",
+    "code_path": "v7/backcast_observation_dynamic.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-08-shared-observation-dynamic-v11",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_observation_dynamic.py"
+  },
+  {
+    "id": "v12",
+    "version": "0.12",
+    "title": "Flow timing & robust transfer",
+    "phase": "Unified dynamics",
+    "date": "2026-10-09",
+    "description": "Uses original positive construction/investment/material levels for timing, robust country losses and support-aware attenuation.",
+    "equation": "C = CGHSL + 0.05 \u03b8 \u00b7 [demand, production, context \u00d7 supported change]",
+    "fitting": "Three cumulative and three annual coefficients. Centered log flow levels; fixed Huber \u03b4 1.35, unit ridge and working annual-label covariance. Train-only leverage attenuates residual corrections; it is not a validated Area of Applicability.",
+    "factors": {
+      "annual_log_impervious_area_change": [
+        "cumulative",
+        "proxy observation"
+      ],
+      "nonres_volume_share": [
+        "cumulative"
+      ],
+      "urban_core_building_density": [
+        "cumulative"
+      ],
+      "core_periphery_endpoint_growth_difference": [
+        "cumulative"
+      ],
+      "annual_log_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_urban_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_working_age_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "net_migration_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "cumulative",
+        "annual"
+      ],
+      "interval_log_ppp_gdp_per_capita_level": [
+        "cumulative"
+      ],
+      "interval_urban_population_fraction": [
+        "cumulative"
+      ],
+      "interval_log_built_surface_per_capita_proxy": [
+        "cumulative"
+      ],
+      "annual_log_real_services_va_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_manufacturing_va_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_construction_value_added_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_construction_employment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_cement_production_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_gfcf_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_residential_investment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_other_buildings_structures_investment_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_building_permits_change": [
+        "cumulative",
+        "annual"
+      ],
+      "private_credit_gdp_share_change_fraction": [
+        "cumulative",
+        "annual"
+      ],
+      "real_interest_rate_fraction": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_construction_cost_change": [
+        "cumulative",
+        "annual"
+      ],
+      "disaster_affected_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "conflict_deaths_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "older_built_surface_share": [
+        "cumulative"
+      ],
+      "annual_log1p_viirs_radiance_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log1p_built_weighted_viirs_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log1p_urban_core_viirs_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_surface_change_proxy": [
+        "horizontal prior"
+      ]
+    },
+    "parameters": {
+      "families": {
+        "land_observation": [
+          "annual_log_impervious_area_change",
+          "annual_log_building_presence_change",
+          "annual_log_building_count_change",
+          "annual_log_building_height_change",
+          "annual_log_building_volume_proxy_change"
+        ],
+        "morphology": [
+          "nonres_volume_share",
+          "urban_core_building_density",
+          "core_periphery_endpoint_growth_difference"
+        ],
+        "demography": [
+          "annual_log_population_change",
+          "annual_log_urban_population_change",
+          "annual_log_working_age_population_change",
+          "annual_log_household_count_change",
+          "annual_log_urban_population_density_change"
+        ],
+        "household_background": [
+          "average_household_size"
+        ],
+        "migration": [
+          "net_migration_per1000_population"
+        ],
+        "macro_growth": [
+          "annual_log_real_gdp_per_capita_change"
+        ],
+        "development_background": [
+          "interval_log_ppp_gdp_per_capita_level",
+          "interval_urban_population_fraction",
+          "interval_log_built_surface_per_capita_proxy"
+        ],
+        "sector_capacity": [
+          "annual_log_real_services_va_change",
+          "annual_log_real_manufacturing_va_change"
+        ],
+        "construction_activity": [
+          "annual_log_real_construction_value_added_change",
+          "annual_log_real_construction_value_added_change_lag1",
+          "annual_log_construction_employment_change",
+          "annual_log_cement_production_change"
+        ],
+        "investment_pipeline": [
+          "annual_log_real_gfcf_change",
+          "annual_log_residential_investment_change",
+          "annual_log_nonresidential_building_investment_change",
+          "annual_log_other_buildings_structures_investment_change",
+          "annual_log_building_permits_change",
+          "annual_log_building_completions_change"
+        ],
+        "financial_conditions": [
+          "annual_log_private_sector_credit_change",
+          "private_credit_gdp_share_change_fraction",
+          "real_interest_rate_fraction",
+          "annual_log_construction_cost_change"
+        ],
+        "loss_risk": [
+          "disaster_affected_per1000_population",
+          "conflict_deaths_per1000_population"
+        ],
+        "stock_background": [
+          "older_built_surface_share"
+        ],
+        "lights": [
+          "annual_log1p_viirs_radiance_change",
+          "annual_log1p_built_weighted_viirs_change",
+          "annual_log1p_urban_core_viirs_change"
+        ]
+      },
+      "total_axes": {
+        "demand": [
+          "demography",
+          "migration",
+          "macro_growth"
+        ],
+        "production": [
+          "land_observation",
+          "construction_activity",
+          "investment_pipeline",
+          "sector_capacity",
+          "financial_conditions",
+          "lights"
+        ],
+        "background": [
+          "morphology",
+          "household_background",
+          "development_background",
+          "stock_background",
+          "loss_risk"
+        ]
+      },
+      "timing_axes": {
+        "activity": [
+          "land_observation",
+          "construction_activity",
+          "investment_pipeline",
+          "lights"
+        ],
+        "demand_shock": [
+          "demography",
+          "migration",
+          "macro_growth",
+          "sector_capacity",
+          "financial_conditions",
+          "loss_risk"
+        ]
+      },
+      "scales": {
+        "cumulative_log": 0.05,
+        "annual_native_log_level": 0.01
+      },
+      "GLC_relative_precision": 0.5,
+      "annual_smoothness": 1.0,
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "total_coefficients": [
+        0.8102564957990839,
+        -0.2641742047545749,
+        -0.013357168385895448
+      ],
+      "timing_coefficients": [
+        0.4229353515930184,
+        0.17488848314304717,
+        0.017570579428218606
+      ],
+      "total_effective_degrees_of_freedom": 1.2608436581083347,
+      "timing_effective_degrees_of_freedom": 1.251400245424714
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-09-shared-flow-transfer-v12",
+    "code_path": "v7/backcast_flow_transfer.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-09-shared-flow-transfer-v12",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_flow_transfer.py"
+  },
+  {
+    "id": "v13",
+    "version": "0.13",
+    "title": "Stock-capacity timing",
+    "phase": "Unified dynamics",
+    "date": "2026-10-09",
+    "description": "Retains the v0.12 cumulative estimator and separates activity acceleration from stock-normalized flow intensity.",
+    "equation": "capacity\u1d67 = center[log(qualified flow\u1d67) \u2212 (y \u2212 2020) \u00d7 GHSL baseline rate]",
+    "fitting": "Three cumulative and four annual coefficients. An outcome-free training-only projection removes linear capacity/activity redundancy. Fixed robust regularization and zero-sum dynamic states. No new endpoint improvement or adoption.",
+    "factors": {
+      "annual_log_impervious_area_change": [
+        "cumulative",
+        "proxy observation"
+      ],
+      "nonres_volume_share": [
+        "cumulative"
+      ],
+      "urban_core_building_density": [
+        "cumulative"
+      ],
+      "core_periphery_endpoint_growth_difference": [
+        "cumulative"
+      ],
+      "annual_log_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_urban_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_working_age_population_change": [
+        "cumulative",
+        "annual"
+      ],
+      "net_migration_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_gdp_per_capita_change": [
+        "cumulative",
+        "annual"
+      ],
+      "interval_log_ppp_gdp_per_capita_level": [
+        "cumulative"
+      ],
+      "interval_urban_population_fraction": [
+        "cumulative"
+      ],
+      "interval_log_built_surface_per_capita_proxy": [
+        "cumulative"
+      ],
+      "annual_log_real_services_va_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_manufacturing_va_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_real_construction_value_added_change": [
+        "cumulative",
+        "annual",
+        "capacity"
+      ],
+      "annual_log_construction_employment_change": [
+        "cumulative",
+        "annual",
+        "capacity"
+      ],
+      "annual_log_cement_production_change": [
+        "cumulative",
+        "annual",
+        "capacity"
+      ],
+      "annual_log_real_gfcf_change": [
+        "cumulative",
+        "annual",
+        "capacity"
+      ],
+      "annual_log_residential_investment_change": [
+        "cumulative",
+        "annual",
+        "capacity"
+      ],
+      "annual_log_other_buildings_structures_investment_change": [
+        "cumulative",
+        "annual",
+        "capacity"
+      ],
+      "annual_log_building_permits_change": [
+        "cumulative",
+        "annual",
+        "capacity"
+      ],
+      "private_credit_gdp_share_change_fraction": [
+        "cumulative",
+        "annual"
+      ],
+      "real_interest_rate_fraction": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_construction_cost_change": [
+        "cumulative",
+        "annual"
+      ],
+      "disaster_affected_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "conflict_deaths_per1000_population": [
+        "cumulative",
+        "annual"
+      ],
+      "older_built_surface_share": [
+        "cumulative"
+      ],
+      "annual_log1p_viirs_radiance_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log1p_built_weighted_viirs_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log1p_urban_core_viirs_change": [
+        "cumulative",
+        "annual"
+      ],
+      "annual_log_surface_change_proxy": [
+        "horizontal prior"
+      ]
+    },
+    "parameters": {
+      "families": {
+        "land_observation": [
+          "annual_log_impervious_area_change",
+          "annual_log_building_presence_change",
+          "annual_log_building_count_change",
+          "annual_log_building_height_change",
+          "annual_log_building_volume_proxy_change"
+        ],
+        "morphology": [
+          "nonres_volume_share",
+          "urban_core_building_density",
+          "core_periphery_endpoint_growth_difference"
+        ],
+        "demography": [
+          "annual_log_population_change",
+          "annual_log_urban_population_change",
+          "annual_log_working_age_population_change",
+          "annual_log_household_count_change",
+          "annual_log_urban_population_density_change"
+        ],
+        "household_background": [
+          "average_household_size"
+        ],
+        "migration": [
+          "net_migration_per1000_population"
+        ],
+        "macro_growth": [
+          "annual_log_real_gdp_per_capita_change"
+        ],
+        "development_background": [
+          "interval_log_ppp_gdp_per_capita_level",
+          "interval_urban_population_fraction",
+          "interval_log_built_surface_per_capita_proxy"
+        ],
+        "sector_capacity": [
+          "annual_log_real_services_va_change",
+          "annual_log_real_manufacturing_va_change"
+        ],
+        "construction_activity": [
+          "annual_log_real_construction_value_added_change",
+          "annual_log_real_construction_value_added_change_lag1",
+          "annual_log_construction_employment_change",
+          "annual_log_cement_production_change"
+        ],
+        "investment_pipeline": [
+          "annual_log_real_gfcf_change",
+          "annual_log_residential_investment_change",
+          "annual_log_nonresidential_building_investment_change",
+          "annual_log_other_buildings_structures_investment_change",
+          "annual_log_building_permits_change",
+          "annual_log_building_completions_change"
+        ],
+        "financial_conditions": [
+          "annual_log_private_sector_credit_change",
+          "private_credit_gdp_share_change_fraction",
+          "real_interest_rate_fraction",
+          "annual_log_construction_cost_change"
+        ],
+        "loss_risk": [
+          "disaster_affected_per1000_population",
+          "conflict_deaths_per1000_population"
+        ],
+        "stock_background": [
+          "older_built_surface_share"
+        ],
+        "lights": [
+          "annual_log1p_viirs_radiance_change",
+          "annual_log1p_built_weighted_viirs_change",
+          "annual_log1p_urban_core_viirs_change"
+        ]
+      },
+      "total_axes": {
+        "demand": [
+          "demography",
+          "migration",
+          "macro_growth"
+        ],
+        "production": [
+          "land_observation",
+          "construction_activity",
+          "investment_pipeline",
+          "sector_capacity",
+          "financial_conditions",
+          "lights"
+        ],
+        "background": [
+          "morphology",
+          "household_background",
+          "development_background",
+          "stock_background",
+          "loss_risk"
+        ]
+      },
+      "timing_axes": {
+        "activity": [
+          "land_observation",
+          "construction_activity",
+          "investment_pipeline",
+          "lights"
+        ],
+        "demand_shock": [
+          "demography",
+          "migration",
+          "macro_growth",
+          "sector_capacity",
+          "financial_conditions",
+          "loss_risk"
+        ]
+      },
+      "scales": {
+        "cumulative_log": 0.05,
+        "annual_native_log_level": 0.01
+      },
+      "GLC_relative_precision": 0.5,
+      "annual_smoothness": 1.0,
+      "training_countries": [
+        "CHL",
+        "DEU",
+        "DNK",
+        "KAZ",
+        "KGZ",
+        "ROU"
+      ],
+      "capacity_activity_projection": 0.3168732891618338,
+      "total_coefficients": [
+        0.8102564957990839,
+        -0.2641742047545749,
+        -0.013357168385895448
+      ],
+      "timing_coefficients": [
+        0.6136687394106836,
+        0.039850650924451954,
+        0.3301211928321654,
+        0.004086719737087994
+      ],
+      "total_effective_degrees_of_freedom": 1.2608436581083347,
+      "timing_effective_degrees_of_freedom": 1.5619943028961678
+    },
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "ROU"
+    ],
+    "complete_paths": 193,
+    "status": "Archived research candidate",
+    "matched_comparison": true,
+    "source_folder": "2026-10-09-shared-stock-capacity-v13",
+    "code_path": "v7/backcast_stock_capacity.py",
+    "source_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/tree/7411d51eb9464e359168840fc1b61e155fd2040d/review/2026-10-09-shared-stock-capacity-v13",
+    "code_url": "https://github.com/Building-Insights-Together/indicator-1.1-existing-floorspace/blob/7411d51eb9464e359168840fc1b61e155fd2040d/v7/backcast_stock_capacity.py"
+  }
+]
