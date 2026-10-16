@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-10-16T19:12:16.035806+00:00",
+  "files": {
+    "area_equivalent_comparison.csv": {
+      "sha256": "27cbeac2ddc66d3bf4c443f12b534583cb194ebc6218393ed1d77696d12b2c91",
+      "bytes": 1714231
+    },
+    "comparison_protocol.json": {
+      "sha256": "92d53795def247960ac2cc915863ab5b1a4172dd0216331a1aa89a3d2f4393b8",
+      "bytes": 7167
+    },
+    "country_comparison_2020_wide.csv": {
+      "sha256": "0c81d4737a1bd0a2cf0cf85525f2586efe06611b7b44dde79478144463689b7d",
+      "bytes": 68124
+    },
+    "cumulative_change_differences.csv": {
+      "sha256": "9d51211828368b1171f96ad5a11f9a10985ae25200f1e9c22be25247d7045d7f",
+      "bytes": 917339
+    },
+    "dataset_guide.csv": {
+      "sha256": "a04dd49ef4678d93591f2131293318ad96001b3bff95d3b96597a16e88d2b7ce",
+      "bytes": 2131
+    },
+    "matched_cohort_summary.csv": {
+      "sha256": "36f13921788ea6855e78f724c4b96e30adfb80cf340a8a4df7db33be77789542",
+      "bytes": 2774
+    },
+    "native_spatial_differences_2020.csv": {
+      "sha256": "60a9c3b94e090c0304208a1062fb67b0c1e476840814f8d986602cc0b6f3b208",
+      "bytes": 405585
+    },
+    "summary.json": {
+      "sha256": "b8a17d07a28bf3db1b56c7ef40c462278ce27b7d974c7c91ec530368ec12e7c1",
+      "bytes": 8951
+    }
+  }
+}

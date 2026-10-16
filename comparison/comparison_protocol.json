@@ -1,0 +1,124 @@
+{
+  "schema": "cross-global-dataset-disagreement-v1",
+  "frozen_at": "2026-10-16T19:12:15.788884+00:00",
+  "code_sha256": "b732e777ce9b72a6148380f8899484dcfb88f810c375dda501b2cbc8c5dc8e5f",
+  "input_files": {
+    "model": {
+      "path": "review/2026-10-16-global-gfa-final/country_year_gfa_2015_2030_final.csv",
+      "sha256": "2be1dcce3b044d8263d5db7899fd949720a5c267f93f0089e73abb9fd985422c"
+    },
+    "anchors": {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/inputs/anchors_2020_2023.csv",
+      "sha256": "a60a2e882d836feb9827ccde8e31757d029bc692133fd57b08676e8dfd2aae8d"
+    },
+    "tempo": {
+      "path": "releases/6.2.0/tempo_country_summaries.csv",
+      "sha256": "50954c01d00f08d3b9c5c6bb8c35c0271a2e9f6f6c665e07d94af35637b84922"
+    },
+    "ghsl_surface": {
+      "path": "review/2026-09-21/evidence/ghs_built_s_country_surface.csv",
+      "sha256": "8402e36639cff77b0c91ec7fea4ce3062168c808da5bf28947020923637b1947"
+    },
+    "ghsl_volume": {
+      "path": "review/2026-10-13-historical-sector-composition/epoch_country_sector_volumes.csv",
+      "sha256": "d042f13eddfa5fdb989accee3664b9ef3bf64e94106d1fdb84746704d43ee1c2"
+    },
+    "obat": {
+      "path": "review/2026-10-15-obat-input-integration/obat_country_static_features.csv",
+      "sha256": "be69b3bc6affc642e1169d1f5872838cad85867a779f0efc1346ddfc23587978"
+    },
+    "obat_raw": {
+      "path": "review/2026-10-15-obat-input-integration/source/GHS_OBAT_COUNTRYSTATS_E2020_GLOBE_R2024A_V1_0__Sheet1__raw_table.csv",
+      "sha256": "82795145f71e75bb11fa52dfcad4a9a960d168d22164e48e4dd092e2505dd88a"
+    },
+    "obat_dictionary": {
+      "path": "review/2026-10-15-obat-input-integration/source/field_dictionary.csv",
+      "sha256": "95aa554a3de078c884b5a2ddc105c2e94210807d67fa92cb905256cd87233851"
+    },
+    "obat_semantics": {
+      "path": "review/2026-10-15-obat-input-integration/source/source_semantics.json",
+      "sha256": "69f20523b86771c5dfc78e3c45f79575009faee1dbc15adc0edaa35833a1bf05"
+    },
+    "wup": {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/inputs/wup_native_epoch_context.csv",
+      "sha256": "0a360496d72d3e4fb957970a22bdcaff938f35b4fbdfd47659a25b78217f152e"
+    },
+    "fitted_model": {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/fitted_model.json",
+      "sha256": "d1d72ad19f54a67e92c30b9d5684cfdf2732501af13b4cca2ae80c3097142d85"
+    },
+    "final_numeric_freeze": {
+      "path": "review/2026-10-16-global-gfa-final/numeric_release_freeze.json",
+      "sha256": "7e8c0355ceeebe4cc1eb43356b2fbfa794209be3dd7f383550fea65bca8089c9"
+    }
+  },
+  "intent": "Quantify cross-dataset disagreement; no model fitting, tuning, independent accuracy score or approval claim",
+  "signed_difference": "M-D; positive means model/baseline is larger",
+  "signed_percent": "100*(M-D)/D; D must be positive",
+  "absolute_percent": "100*abs(M-D)/D",
+  "reference_definition": "D is comparator, not assumed truth",
+  "area_equivalent": "Native surface/volume translated using each country's EXISTING frozen model2020/TEMPO2020 ratio. These are new conditional comparison scenarios, NOT externally published GFA estimates. No extra height/storey assumptions fitted.",
+  "no_double_evidence": "OBAT equivalent percent difference equals its footprint comparison algebraically; inherited2020 proxy identity excluded from substantive summaries. Do not combine dataset families into an accuracy score.",
+  "growth": "100*((M_end/M_start-1)-(S_end/S_start-1)), percentage points; GFA and source physical growth remain distinct",
+  "missing": "Keep missing/unqualified cells blank with reasons, never zero fill. PSE source-conditioned supplement kept in country grid, excluded from core194 aggregates.",
+  "global_summary": "Sum M and D over exactly the same available core194 country cohort for each dataset/year; separately report count and excluded countries",
+  "temporal": "Only source-native epochs used. No interpolation or annual/future OBAT/GHSL observations fabricated.",
+  "scope": "Total GFA area-equivalent comparison only. No external RES/NRES GFA claimed from footprint/use or volume shares.",
+  "dataset_guide": [
+    {
+      "dataset_id": "TEMPO_PROXY",
+      "dataset": "TEMPO-derived existing floor-area proxy",
+      "quantity": "assumption-based floor-area proxy",
+      "units": "m2",
+      "epochs": "2020;2023",
+      "conversion": "Previously saved ensemble conversion; no new parameters",
+      "lineage": "2020 level is the model anchor; 2023 comparator unused by v16 fit but shares conversion/upstream lineage",
+      "frame": "Frozen CGAZ source aggregation; exact Q4 acquisition date and common epoch mask not certified",
+      "url": "https://arxiv.org/abs/2511.12104"
+    },
+    {
+      "dataset_id": "GHSL_SURFACE",
+      "dataset": "GHS-BUILT-S R2023A",
+      "quantity": "horizontal built-up surface",
+      "units": "m2",
+      "epochs": "2015;2020",
+      "conversion": "Area equivalent = model2020 * source surface / TEMPO2020 footprint",
+      "lineage": "Historical horizontal endpoint trend already used by v16",
+      "frame": "Saved country aggregation; cross-source boundary and pixel-support alignment not certified; legacy observed flag is not acquisition proof",
+      "url": "https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php"
+    },
+    {
+      "dataset_id": "GHSL_VOLUME",
+      "dataset": "GHS-BUILT-V R2023A",
+      "quantity": "built-up volume",
+      "units": "m3",
+      "epochs": "2015;2020",
+      "conversion": "Area equivalent = model2020 * source volume / TEMPO2020 volume",
+      "lineage": "Model sector composition uses this source family; fixed2018-height modeled epochs",
+      "frame": "Only qualified source rows admitted; CAN/PAK/TUV/USA fail source checks; PSE unmapped in retained table",
+      "url": "https://human-settlement.emergency.copernicus.eu/ghs_buV2023.php"
+    },
+    {
+      "dataset_id": "OBAT_FOOTPRINT",
+      "dataset": "GHS-OBAT R2024A / Overture",
+      "quantity": "included-footprint horizontal area",
+      "units": "m2",
+      "epochs": "nominal2020; geometry2024-07-22.0",
+      "conversion": "Area equivalent = model2020 * OBAT footprint / TEMPO2020 footprint",
+      "lineage": "Six static OBAT factors used by v16; attributes share GHSL lineage",
+      "frame": "Adjusted GADM4.1 boundaries; included Overture coverage unknown; China shortfall flagged; not a contemporaneous2020 census",
+      "url": "https://data.jrc.ec.europa.eu/dataset/f41a22f1-5741-4c41-86eb-6384654f6927"
+    },
+    {
+      "dataset_id": "WUP_SURFACE",
+      "dataset": "GHS-WUP country statistics R2025A",
+      "quantity": "horizontal built-up surface",
+      "units": "m2",
+      "epochs": "2015;2020;2025;2030",
+      "conversion": "Area equivalent = model2020 * WUP surface / TEMPO2020 footprint; km2 multiplied by1e6 once",
+      "lineage": "Future horizontal path is already a v16 driver; WUP historical surface derives from GHSL",
+      "frame": "Published UN country boundaries, L1 class partition, national completeness unproven;2025/2030 source projections",
+      "url": "https://human-settlement.emergency.copernicus.eu/datasets.php"
+    }
+  ]
+}
