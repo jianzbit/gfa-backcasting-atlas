@@ -17,6 +17,15 @@
     return {country:s.country==='WORLD'||data.countries[s.country]?s.country:'WORLD',sector:SECTORS[s.sector]?s.sector:'total',start,end,
       view:['level','net','rate','index'].includes(s.view)?s.view:'level',unit:['auto','million','billion'].includes(s.unit)?s.unit:'auto',range:s.range!==false};
   }
+  function moveEndpoint(s,endpoint,year){
+    if(!['start','end'].includes(endpoint)||!finite(year))return {...s};
+    const min=endpoint==='start'?2015:s.start+1,max=endpoint==='start'?s.end-1:2030;
+    return {...s,[endpoint]:Math.min(max,Math.max(min,Math.round(year)))};
+  }
+  function yearAtPlotX(position,left,width){
+    if(!finite(position)||!finite(left)||!finite(width)||width<=0)return null;
+    return Math.min(2030,Math.max(2015,Math.round(2015+15*(position-left)/width)));
+  }
   function series(data,country){return country==='WORLD'?data.world:data.countries[country].rows;}
   function statistics(rows,sector,start,end){
     const k=SECTORS[sector].column,a=rows.find(r=>r[0]===start),b=rows.find(r=>r[0]===end);
@@ -58,12 +67,12 @@
     const x=y=>p.l+(y-2015)/15*pw,y=v=>p.t+(top-v/scale)/(top-bottom)*ph,path=a=>a.map((v,i)=>(i?'L':'M')+x(v.year).toFixed(2)+','+y(v.value).toFixed(2)).join(' ');
     const labels=mobile?[2015,2020,2026,2030]:[2015,2018,2020,2023,2026,2030];
     const font=mobile?10:11,clip='plot-clip';
-    const parts=[`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="chart-svg-title chart-svg-desc"><title id="chart-svg-title">${esc(name)}: ${esc(SECTORS[s.sector].label)} ${esc(s.view)} estimates, 2015–2030</title><desc id="chart-svg-desc">Selected interval ${s.start} to ${s.end}. Three connected display regions: Backcast 2015–2020, Nowcast 2020–2026 including modeled reconstruction, and Forecast 2026–2030. The 2020 anchor and 2026 estimate are shared connection points. All values are model estimates; the sensitivity envelope is not a confidence interval.</desc><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:${font}px;fill:#6b736a}.point{cursor:crosshair}.point:focus{outline:none;stroke:#2e6c58;stroke-width:4}</style><defs><clipPath id="${clip}"><rect x="${p.l}" y="${p.t}" width="${pw}" height="${ph}"/></clipPath></defs>`];
+    const parts=[`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="group" aria-labelledby="chart-svg-title chart-svg-desc"><title id="chart-svg-title">${esc(name)}: ${esc(SECTORS[s.sector].label)} ${esc(s.view)} estimates, 2015–2030</title><desc id="chart-svg-desc">Selected interval ${s.start} to ${s.end}. Drag the FROM and TO circles, or use their arrow keys, to change comparison years. Three connected display regions: Backcast 2015–2020, Nowcast 2020–2026 including modeled reconstruction, and Forecast 2026–2030. The 2020 anchor and 2026 estimate are shared connection points. All values are model estimates; the sensitivity envelope is not a confidence interval.</desc><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:${font}px;fill:#6b736a}.point{cursor:crosshair}.point:focus{outline:none;stroke:#2e6c58;stroke-width:4}.comparison-handle{cursor:ew-resize;touch-action:none;outline:none}.comparison-handle circle{touch-action:none}.comparison-handle:focus-visible .handle-ring{stroke-width:4}.comparison-handle:focus-visible .handle-halo{opacity:.22}</style><defs><clipPath id="${clip}"><rect x="${p.l}" y="${p.t}" width="${pw}" height="${ph}"/></clipPath></defs>`];
     CHART_PHASES.forEach(stage=>{
       const xx=x(stage.start),ww=x(stage.end)-xx,mid=xx+ww/2;
       parts.push(`<rect data-region="${stage.id}" x="${xx}" y="${p.t-42}" width="${ww}" height="${ph+42}" fill="${stage.background}"/><text x="${mid}" y="${p.t-24}" text-anchor="middle" style="fill:${stage.line};font-size:${mobile?8:11}px;font-weight:700;letter-spacing:${mobile ? 0.4 : 1}px">${stage.label}</text><text x="${mid}" y="${p.t-10}" text-anchor="middle" style="font-size:${mobile?8:10}px">${stage.start}–${stage.end}</text>`);
     });
-    if(s.start>2015||s.end<2030)parts.push(`<rect x="${x(s.start)}" y="${p.t}" width="${x(s.end)-x(s.start)}" height="${ph}" fill="#829c88" opacity=".055"/>`);
+    parts.push(`<rect data-selection-range="true" x="${x(s.start)}" y="${p.t}" width="${x(s.end)-x(s.start)}" height="${ph}" fill="#829c88" opacity=".075"/>`);
     const ticks=Math.round((top-bottom)/step);
     for(let j=0;j<=ticks;j++){const value=bottom+j*step,yy=y(value*scale),precision=Math.abs(step)<1?Math.min(8,Math.ceil(-Math.log10(Math.abs(step)))+1):1;parts.push(`<line x1="${p.l}" x2="${w-p.r}" y1="${yy}" y2="${yy}" stroke="#d9dad0" stroke-width="1"/><text x="${p.l-10}" y="${yy+4}" text-anchor="end">${number(value,precision)}${s.view==='rate'?'%':''}</text>`);}
     labels.forEach(year=>parts.push(`<text x="${x(year)}" y="${h-15}" text-anchor="${year===2015?'start':year===2030?'end':'middle'}">${year}</text>`));
@@ -80,7 +89,17 @@
       else parts.push(`<circle cx="${xx}" cy="${yy}" r="${v.year===s.end||v.year===2026?r+1.5:r}" fill="${fill}" stroke="${stage.line}" stroke-width="2" opacity="${inRange?1:.45}"/>`);
       parts.push(`<circle class="point" data-year="${v.year}" tabindex="0" role="img" aria-label="${esc(desc)}" cx="${xx}" cy="${yy}" r="${mobile?9:10}" fill="transparent" stroke="transparent"><title>${esc(desc)}</title></circle>`);
     });
-    const end=vals.find(v=>v.year===s.end);if(end&&finite(end.value)){const xx=x(end.year),yy=Math.max(p.t+13,y(end.value)-15),a=Math.abs(end.value/scale),precision=a>0&&a<.001?8:a<.1?4:a<1?3:1,stage=CHART_PHASES.find(p=>end.year<=p.end);parts.push(`<text x="${xx-3}" y="${yy}" text-anchor="end" style="fill:${stage.line};font-size:${mobile?13:17}px;font-weight:600">${number(end.value/scale,precision)}${s.view==='rate'?'%':''}</text>`);}
+    const end=vals.find(v=>v.year===s.end);if(end&&finite(end.value)&&x(s.end)-x(s.start)>74){const xx=x(end.year),yy=Math.max(p.t+13,y(end.value)-15),a=Math.abs(end.value/scale),precision=a>0&&a<.001?8:a<.1?4:a<1?3:1,stage=CHART_PHASES.find(p=>end.year<=p.end);parts.push(`<text x="${xx-3}" y="${yy}" text-anchor="end" style="fill:${stage.line};font-size:${mobile?13:17}px;font-weight:600">${number(end.value/scale,precision)}${s.view==='rate'?'%':''}</text>`);}
+    const endpointY=endpoint=>{const v=vals.find(v=>v.year===s[endpoint]);return y(v&&finite(v.value)?v.value:0);};
+    const separateHandles=x(s.end)-x(s.start)<48&&Math.abs(endpointY('end')-endpointY('start'))<48;
+    const separatedTop=Math.max(p.t+22,Math.min(h-p.b-74,(endpointY('start')+endpointY('end'))/2-26));
+    ['start','end'].forEach(endpoint=>{
+      const year=s[endpoint],xx=x(year),stockY=endpointY(endpoint),yy=separateHandles?separatedTop+(endpoint==='start'?0:52):stockY,color=endpoint==='start'?'#625538':'#2e6c58',label=endpoint==='start'?'FROM':'TO';
+      const tagWidth=mobile?65:74,tagX=Math.max(p.l+tagWidth/2,Math.min(w-p.r-tagWidth/2,xx)),tagY=Math.max(p.t+14,Math.min(h-p.b-14,yy+(endpoint==='start'?-32:32)));
+      const min=endpoint==='start'?2015:s.start+1,max=endpoint==='start'?s.end-1:2030;
+      if(separateHandles)parts.push(`<line x1="${xx}" x2="${xx}" y1="${stockY}" y2="${yy}" stroke="${color}" stroke-width="1.5" pointer-events="none"/>`);
+      parts.push(`<line x1="${xx}" x2="${xx}" y1="${p.t}" y2="${h-p.b}" stroke="${color}" opacity=".4" stroke-dasharray="3 4" pointer-events="none"/><g pointer-events="none"><rect x="${tagX-tagWidth/2}" y="${tagY-10}" width="${tagWidth}" height="20" rx="4" fill="#fffefb" stroke="${color}" stroke-opacity=".3"/><text x="${tagX}" y="${tagY+3}" text-anchor="middle" style="fill:${color};font-size:${mobile?9:10}px;font-weight:700">${label} ${year}</text></g><g class="comparison-handle" data-handle="${endpoint}" role="slider" tabindex="0" aria-label="Comparison ${endpoint} year" aria-orientation="horizontal" aria-valuemin="${min}" aria-valuemax="${max}" aria-valuenow="${year}" aria-valuetext="${label} ${year}. Drag or use arrow keys to change year."><title>${label} ${year}: drag horizontally or use arrow keys</title><circle class="handle-halo" cx="${xx}" cy="${yy}" r="16" fill="${color}" opacity=".12"/><circle class="handle-ring" cx="${xx}" cy="${yy}" r="9" fill="#fffefb" stroke="${color}" stroke-width="2.5"/><circle cx="${xx}" cy="${yy}" r="3" fill="${color}"/><circle class="handle-hit" cx="${xx}" cy="${yy}" r="24" fill="transparent"/></g>`);
+    });
     parts.push('</svg>');return parts.join('');
   }
   function factorRows(data,state,search='',group='all',status='all'){
@@ -93,7 +112,7 @@
       return {f,use,isPrior,used,indirect};
     }).filter(({f,use,used})=>(group==='all'||f.group===group)&&(!search||[f.label,f.id,f.source,f.group_label].join(' ').toLowerCase().includes(search.toLowerCase()))&&(status==='all'||status==='used'&&used||status==='unused'&&!used||status==='annual'&&use[1]||status==='static'&&use[3]));
   }
-  const api={SECTORS,phase,normalizeSelection,series,statistics,chartValues,units,makeCSV,buildSVG,factorRows};
+  const api={SECTORS,phase,normalizeSelection,moveEndpoint,yearAtPlotX,series,statistics,chartValues,units,makeCSV,buildSVG,factorRows};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.GFAExplorer=api;
   if(!root.document||!root.GFA_DATA)return;
@@ -105,6 +124,7 @@
   function saveURL(){const p=new URLSearchParams({country:state.country,sector:state.sector,from:state.start,to:state.end,view:state.view,unit:state.unit,range:state.range?'on':'off'});root.history.replaceState(null,'',root.location.pathname+'?'+p.toString()+root.location.hash);}
   function download(body,filename,type){const blob=new Blob([body],{type}),url=URL.createObjectURL(blob),a=root.document.createElement('a');a.href=url;a.download=filename;a.click();root.setTimeout(()=>URL.revokeObjectURL(url),2000);}
   function renderChart(){
+    const focusedHandle=$('chart').contains(root.document.activeElement)?root.document.activeElement.dataset.handle:null;
     const r=series(D,state.country),u=units(r,state.sector,state.unit),labels={level:'Estimated floorspace',net:'Annual net area change',rate:'Annual growth rate',index:'Floorspace index'};
     $('chart-title').textContent=SECTORS[state.sector].label+' · '+labels[state.view].toLowerCase();
     $('chart-subtitle').textContent='Nominal year-end estimates · '+(state.view==='rate'?'percent':state.view==='index'?'2020 = 100':u.label);
@@ -112,6 +132,7 @@
     $('show-range').disabled=state.view!=='level';$('unit').disabled=state.view==='rate'||state.view==='index';
     $('range-note').textContent=state.view==='level'?'The shaded envelope spans 37 fixed structural sensitivity scenarios. It is not a calibrated confidence interval. All central values are model estimates.':state.view==='index'?'The 2020 index is fixed at 100 by normalization. Relative changes do not validate the absolute 2020 anchor.':'Annual changes compare adjacent nominal year-end stocks. The first year has no preceding-year estimate and remains unavailable. No growth confidence interval is implied.';
     $('chart').querySelectorAll('[data-year]').forEach(el=>{const show=()=>readout(Number(el.dataset.year));el.addEventListener('mouseenter',show);el.addEventListener('focus',show);el.addEventListener('click',show);});
+    if(focusedHandle)$('chart').querySelector(`[data-handle="${focusedHandle}"]`)?.focus({preventScroll:true});
     readout(state.end);
   }
   function readout(year){
@@ -150,6 +171,35 @@
     }).join('')+'</tbody></table>';
   }
   function render(){state=normalizeSelection(state,D);$('country').value=state.country;$('start-year').value=state.start;$('end-year').value=state.end;$('chart-view').value=state.view;$('unit').value=state.unit;$('show-range').checked=state.range;root.document.querySelectorAll('[data-sector]').forEach(el=>{const active=el.dataset.sector===state.sector;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));});renderMetrics();renderChart();renderAnnual();renderFactors();saveURL();}
+  const chart=$('chart');let dragSelection=null;
+  function setEndpoint(endpoint,year,focus=false){
+    const next=moveEndpoint(state,endpoint,year);if(next.start===state.start&&next.end===state.end)return;
+    state=next;$('start-year').value=state.start;$('end-year').value=state.end;renderMetrics();renderChart();renderAnnual();saveURL();readout(state[endpoint]);
+    if(focus)chart.querySelector(`[data-handle="${endpoint}"]`)?.focus({preventScroll:true});
+  }
+  function pointerYear(e){
+    const svg=chart.querySelector('svg'),rect=svg.getBoundingClientRect(),a=svg.querySelector('[data-region="backcast"]'),b=svg.querySelector('[data-region="forecast"]');
+    const left=Number(a.getAttribute('x')),right=Number(b.getAttribute('x'))+Number(b.getAttribute('width'));
+    return yearAtPlotX((e.clientX-rect.left)*svg.viewBox.baseVal.width/rect.width,left,right-left);
+  }
+  chart.addEventListener('pointerdown',e=>{
+    const handle=e.target.closest('[data-handle]');if(!handle||e.button!==0||dragSelection)return;
+    e.preventDefault();dragSelection={endpoint:handle.dataset.handle,pointerId:e.pointerId};chart.classList.add('is-dragging');chart.setPointerCapture(e.pointerId);handle.focus({preventScroll:true});
+  });
+  chart.addEventListener('pointermove',e=>{if(dragSelection?.pointerId===e.pointerId){e.preventDefault();setEndpoint(dragSelection.endpoint,pointerYear(e));}});
+  function finishDrag(e){
+    if(dragSelection?.pointerId!==e.pointerId)return;
+    const endpoint=dragSelection.endpoint;if(e.type==='pointerup')setEndpoint(endpoint,pointerYear(e));
+    dragSelection=null;chart.classList.remove('is-dragging');if(chart.hasPointerCapture(e.pointerId))chart.releasePointerCapture(e.pointerId);
+    chart.querySelector(`[data-handle="${endpoint}"]`)?.focus({preventScroll:true});readout(state[endpoint]);
+  }
+  ['pointerup','pointercancel','lostpointercapture'].forEach(event=>chart.addEventListener(event,finishDrag));
+  chart.addEventListener('keydown',e=>{
+    const handle=e.target.closest('[data-handle]');if(!handle)return;
+    const endpoint=handle.dataset.handle,offset={ArrowLeft:-1,ArrowDown:-1,ArrowRight:1,ArrowUp:1,PageDown:-5,PageUp:5}[e.key];
+    const year=e.key==='Home'?2015:e.key==='End'?2030:offset?state[endpoint]+offset:null;
+    if(year!==null){e.preventDefault();setEndpoint(endpoint,year,true);}
+  });
   $('country').innerHTML='<option value="WORLD">Global · core 194 countries</option>'+Object.values(D.countries).sort((a,b)=>name(a.id).localeCompare(name(b.id))).map(c=>`<option value="${c.id}">${esc(name(c.id))} (${c.id})${c.supplement?' · supplement':''}</option>`).join('');
   $('start-year').innerHTML=Array.from({length:15},(_,j)=>`<option>${2015+j}</option>`).join('');$('end-year').innerHTML=Array.from({length:15},(_,j)=>`<option>${2016+j}</option>`).join('');
   $('country').addEventListener('change',e=>{state.country=e.target.value;render();});
