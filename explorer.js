@@ -1,6 +1,11 @@
 (function(root){
   'use strict';
   const SECTORS={total:{column:1,low:4,label:'Total'},residential:{column:2,low:6,label:'Residential'},non_residential:{column:3,low:8,label:'Non-residential'}};
+  const CHART_PHASES=[
+    {id:'backcast',label:'BACKCAST',start:2015,end:2020,line:'#827551',background:'#f1eee4',dash:''},
+    {id:'nowcast',label:'NOWCAST',start:2020,end:2026,line:'#27806b',background:'#e6f0e9',dash:'8 5'},
+    {id:'forecast',label:'FORECAST',start:2026,end:2030,line:'#4c7393',background:'#e5ebf2',dash:'5 5'}
+  ];
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const finite=v=>typeof v==='number'&&Number.isFinite(v);
   function phase(y){return y<2020?'Historical backcast':y===2020?'Fixed proxy anchor':y<=2025?'Modeled reconstruction':y===2026?'Model-based nowcast':'Conditional forecast';}
@@ -44,35 +49,38 @@
   }
   function tickStep(maximum){const raw=maximum/4,p=10**Math.floor(Math.log10(raw||1));return [1,2,2.5,5,10].map(v=>v*p).find(v=>v>=raw)||10*p;}
   function buildSVG(rows,s,u,width=1060,name='Country'){
-    const w=Math.max(300,Math.round(width)),mobile=w<600,h=mobile?312:410,p={l:mobile?45:62,r:mobile?15:24,t:42,b:45},pw=w-p.l-p.r,ph=h-p.t-p.b;
+    const w=Math.max(300,Math.round(width)),mobile=w<600,h=mobile?332:430,p={l:mobile?45:62,r:mobile?15:24,t:62,b:45},pw=w-p.l-p.r,ph=h-p.t-p.b;
     const vals=chartValues(rows,s.sector,s.view),isArea=s.view==='level'||s.view==='net',scale=isArea?u.scale:1;
     let nums=vals.map(v=>v.value).filter(finite);
     if(s.range&&s.view==='level')nums.push(...vals.flatMap(v=>[v.lo,v.hi]).filter(finite));
     const low=Math.min(0,...nums.map(v=>v/scale)),high=Math.max(0,...nums.map(v=>v/scale)),step=tickStep(high-low||1);
     let bottom=Math.floor(low/step)*step,top=Math.ceil(high/step)*step;if(top===bottom)top=bottom+1;
     const x=y=>p.l+(y-2015)/15*pw,y=v=>p.t+(top-v/scale)/(top-bottom)*ph,path=a=>a.map((v,i)=>(i?'L':'M')+x(v.year).toFixed(2)+','+y(v.value).toFixed(2)).join(' ');
-    const labels=mobile?[2015,2020,2025,2030]:[2015,2018,2020,2023,2026,2030];
+    const labels=mobile?[2015,2020,2026,2030]:[2015,2018,2020,2023,2026,2030];
     const font=mobile?10:11,clip='plot-clip';
-    const parts=[`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="chart-svg-title chart-svg-desc"><title id="chart-svg-title">${esc(name)}: ${esc(SECTORS[s.sector].label)} ${esc(s.view)} estimates, 2015–2030</title><desc id="chart-svg-desc">Selected interval ${s.start} to ${s.end}. All values are model estimates. Dashed history, fixed2020proxy, modeled reconstruction,2026nowcast and dotted2027–2030conditional forecast. Shading is structural sensitivity, not a confidence interval.</desc><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:${font}px;fill:#6b736a}.point{cursor:crosshair}.point:focus{outline:none;stroke:#2e6c58;stroke-width:4}</style><defs><clipPath id="${clip}"><rect x="${p.l}" y="${p.t}" width="${pw}" height="${ph}"/></clipPath></defs>`];
-    parts.push(`<rect x="${x(2026.5)}" y="${p.t}" width="${x(2030)-x(2026.5)}" height="${ph}" fill="#dfddd1" opacity=".35"/><text x="${x(2030)-3}" y="${p.t-18}" text-anchor="end">FORECAST</text>`);
+    const parts=[`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="chart-svg-title chart-svg-desc"><title id="chart-svg-title">${esc(name)}: ${esc(SECTORS[s.sector].label)} ${esc(s.view)} estimates, 2015–2030</title><desc id="chart-svg-desc">Selected interval ${s.start} to ${s.end}. Three connected display regions: Backcast 2015–2020, Nowcast 2020–2026 including modeled reconstruction, and Forecast 2026–2030. The 2020 anchor and 2026 estimate are shared connection points. All values are model estimates; the sensitivity envelope is not a confidence interval.</desc><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:${font}px;fill:#6b736a}.point{cursor:crosshair}.point:focus{outline:none;stroke:#2e6c58;stroke-width:4}</style><defs><clipPath id="${clip}"><rect x="${p.l}" y="${p.t}" width="${pw}" height="${ph}"/></clipPath></defs>`];
+    CHART_PHASES.forEach(stage=>{
+      const xx=x(stage.start),ww=x(stage.end)-xx,mid=xx+ww/2;
+      parts.push(`<rect data-region="${stage.id}" x="${xx}" y="${p.t-42}" width="${ww}" height="${ph+42}" fill="${stage.background}"/><text x="${mid}" y="${p.t-24}" text-anchor="middle" style="fill:${stage.line};font-size:${mobile?8:11}px;font-weight:700;letter-spacing:${mobile ? 0.4 : 1}px">${stage.label}</text><text x="${mid}" y="${p.t-10}" text-anchor="middle" style="font-size:${mobile?8:10}px">${stage.start}–${stage.end}</text>`);
+    });
     if(s.start>2015||s.end<2030)parts.push(`<rect x="${x(s.start)}" y="${p.t}" width="${x(s.end)-x(s.start)}" height="${ph}" fill="#829c88" opacity=".055"/>`);
     const ticks=Math.round((top-bottom)/step);
     for(let j=0;j<=ticks;j++){const value=bottom+j*step,yy=y(value*scale),precision=Math.abs(step)<1?Math.min(8,Math.ceil(-Math.log10(Math.abs(step)))+1):1;parts.push(`<line x1="${p.l}" x2="${w-p.r}" y1="${yy}" y2="${yy}" stroke="#d9dad0" stroke-width="1"/><text x="${p.l-10}" y="${yy+4}" text-anchor="end">${number(value,precision)}${s.view==='rate'?'%':''}</text>`);}
     labels.forEach(year=>parts.push(`<text x="${x(year)}" y="${h-15}" text-anchor="${year===2015?'start':year===2030?'end':'middle'}">${year}</text>`));
-    parts.push(`<line x1="${x(2020)}" x2="${x(2020)}" y1="${p.t}" y2="${h-p.b}" stroke="#aaa38b" stroke-width="1" stroke-dasharray="3 5"/>`);
+    [2020,2026].forEach(year=>parts.push(`<line data-boundary="${year}" x1="${x(year)}" x2="${x(year)}" y1="${p.t-42}" y2="${h-p.b}" stroke="#a8b1aa" stroke-width="1" stroke-dasharray="3 5"/>`));
     if(s.view==='level'&&s.range){const lower=vals.filter(v=>finite(v.lo)&&finite(v.hi)),pp=lower.map((v,i)=>(i?'L':'M')+x(v.year)+','+y(v.hi)).join(' ')+lower.slice().reverse().map(v=>'L'+x(v.year)+','+y(v.lo)).join(' ')+'Z';parts.push(`<path d="${pp}" fill="#b9b29a" opacity=".24" clip-path="url(#${clip})"/>`);}
     if(s.view==='net'||s.view==='rate'){
-      vals.filter(v=>finite(v.value)).forEach(v=>{const yy=y(v.value),zero=y(0),bw=Math.max(5,pw/15*.42),selected=v.year>=s.start&&v.year<=s.end;parts.push(`<rect x="${x(v.year)-bw/2}" y="${Math.min(yy,zero)}" width="${bw}" height="${Math.max(1,Math.abs(yy-zero))}" fill="${v.value<0?'#ad7b60':'#887a51'}" opacity="${selected?'.85':'.3'}"/>`);});
+      vals.filter(v=>finite(v.value)).forEach(v=>{const yy=y(v.value),zero=y(0),bw=Math.max(5,pw/15*.42),selected=v.year>=s.start&&v.year<=s.end,stage=CHART_PHASES.find(p=>v.year<=p.end);parts.push(`<rect x="${x(v.year)-bw/2}" y="${Math.min(yy,zero)}" width="${bw}" height="${Math.max(1,Math.abs(yy-zero))}" fill="${v.value<0?'#ad7b60':stage.line}" opacity="${selected?'.85':'.3'}"/>`);});
     }else{
-      [[2015,2020,'6 5'],[2020,2026,''],[2026,2030,'2 5']].forEach(([a,b,dash])=>{const vv=vals.filter(v=>v.year>=a&&v.year<=b&&finite(v.value));parts.push(`<path d="${path(vv)}" fill="none" stroke="#827551" stroke-width="${mobile?2.3:2.8}" ${dash?`stroke-dasharray="${dash}"`:''}/>`);});
+      CHART_PHASES.forEach(stage=>{const vv=vals.filter(v=>v.year>=stage.start&&v.year<=stage.end&&finite(v.value));parts.push(`<path data-phase="${stage.id}" data-start-year="${stage.start}" data-end-year="${stage.end}" d="${path(vv)}" fill="none" stroke="${stage.line}" stroke-width="${mobile?2.5:3.1}" ${stage.dash?`stroke-dasharray="${stage.dash}"`:''}/>`);});
     }
     vals.filter(v=>finite(v.value)).forEach(v=>{
-      const xx=x(v.year),yy=y(v.value),inRange=v.year>=s.start&&v.year<=s.end,r=mobile?3.2:4.1,fill=v.year===2026?'#827551':'#f8f7f1',desc=`${v.year}: ${number(v.value/scale,4)} ${isArea?u.label:s.view==='rate'?'percent':'index points'}, ${phase(v.year)}`;
+      const xx=x(v.year),yy=y(v.value),inRange=v.year>=s.start&&v.year<=s.end,r=mobile?3.2:4.1,stage=CHART_PHASES.find(p=>v.year<=p.end),fill=v.year===2026?'#27806b':'#f8f7f1',desc=`${v.year}: ${number(v.value/scale,4)} ${isArea?u.label:s.view==='rate'?'percent':'index points'}, ${phase(v.year)}`;
       if(v.year===2020)parts.push(`<rect x="${xx-r}" y="${yy-r}" width="${r*2}" height="${r*2}" fill="#f8f7f1" stroke="#827551" stroke-width="2" transform="rotate(45 ${xx} ${yy})"/>`);
-      else parts.push(`<circle cx="${xx}" cy="${yy}" r="${v.year===s.end?r+1.5:r}" fill="${fill}" stroke="#827551" stroke-width="2" opacity="${inRange?1:.45}"/>`);
+      else parts.push(`<circle cx="${xx}" cy="${yy}" r="${v.year===s.end||v.year===2026?r+1.5:r}" fill="${fill}" stroke="${stage.line}" stroke-width="2" opacity="${inRange?1:.45}"/>`);
       parts.push(`<circle class="point" data-year="${v.year}" tabindex="0" role="img" aria-label="${esc(desc)}" cx="${xx}" cy="${yy}" r="${mobile?9:10}" fill="transparent" stroke="transparent"><title>${esc(desc)}</title></circle>`);
     });
-    const end=vals.find(v=>v.year===s.end);if(end&&finite(end.value)){const xx=x(end.year),yy=Math.max(p.t+13,y(end.value)-15),a=Math.abs(end.value/scale),precision=a>0&&a<.001?8:a<.1?4:a<1?3:1;parts.push(`<text x="${xx-3}" y="${yy}" text-anchor="end" style="fill:#827551;font-size:${mobile?13:17}px;font-weight:600">${number(end.value/scale,precision)}${s.view==='rate'?'%':''}</text>`);}
+    const end=vals.find(v=>v.year===s.end);if(end&&finite(end.value)){const xx=x(end.year),yy=Math.max(p.t+13,y(end.value)-15),a=Math.abs(end.value/scale),precision=a>0&&a<.001?8:a<.1?4:a<1?3:1,stage=CHART_PHASES.find(p=>end.year<=p.end);parts.push(`<text x="${xx-3}" y="${yy}" text-anchor="end" style="fill:${stage.line};font-size:${mobile?13:17}px;font-weight:600">${number(end.value/scale,precision)}${s.view==='rate'?'%':''}</text>`);}
     parts.push('</svg>');return parts.join('');
   }
   function factorRows(data,state,search='',group='all',status='all'){
