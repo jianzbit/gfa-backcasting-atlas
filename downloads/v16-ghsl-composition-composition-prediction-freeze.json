@@ -1,0 +1,35 @@
+{
+  "frozen_at_utc": "2026-10-21T16:46:21.010645+00:00",
+  "files": [
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/country_year_gfa_2015_2030_dynamic_composition.csv",
+      "sha256": "ca91fafdc8bc2e1f3d60105121823463a2130faaf0cb5815078e852675fefea1",
+      "bytes": 3782498
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/frozen_v16_validation_candidate.csv",
+      "sha256": "428b41b5e804db92b48bacc76e30a2b669d472ff2eb13cc512a0759d1814ad2d",
+      "bytes": 2804700
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/annual_composition_source_paths.csv",
+      "sha256": "00d39a4e4f6a4f31ae83199739e070a2f4011e4e0986a4e30e602096655c40b4",
+      "bytes": 1394107
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/country_held_out_predictions.csv",
+      "sha256": "8bb5a807ff60f5a9d36bf0521d8a62f45e81b8ba1508aa59c375a19fa947b779",
+      "bytes": 173336
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/fold_audit.json",
+      "sha256": "0211092baa3156cab75894c15e68575343c06a4afe4f2f762a590fbb7945f63f",
+      "bytes": 8936
+    }
+  ],
+  "implementation_freeze_sha256": "f025d25d2b54bc3cc308f073f848e76042736d14c6b4dd7fe2f9c9a8221e086d",
+  "protocol_sha256": "adeabf9f2bc1ef63a1ed4570d15cc8d6571dcb382cb3ba1ed139b07963dbdada",
+  "all_predictions_frozen_before_reference_scoring": true,
+  "default_changed": false,
+  "postscore_retuning_permitted": false
+}

@@ -1,0 +1,53 @@
+{
+  "completed_at_utc": "2026-10-21T16:46:32.639125+00:00",
+  "candidate": "dynamic_GHSL_composition",
+  "new_fits": 0,
+  "new_fitted_composition_parameters": 0,
+  "inherited_whole_country_refits": 13,
+  "control_replay_max_abs_score_difference": 1.7763568394002505e-15,
+  "all_Total_scores_exact_ties": true,
+  "primary_seven_country_RES": {
+    "cohort": "seven_country_LOCO",
+    "sector": "residential",
+    "period": "primary_2015_2019",
+    "main_comparator": "dynamic_GHSL_composition",
+    "control_comparator": "v16_retained_composition",
+    "common_country_count": 7,
+    "common_observations": 34,
+    "main_country_macro_abs_log_disagreement_x100": 1.8036582852591234,
+    "control_country_macro_abs_log_disagreement_x100": 1.7353589900374256,
+    "main_minus_control_country_macro_abs_log_disagreement_x100": 0.06829929522169788,
+    "improved_countries": 1,
+    "regressed_countries": 6,
+    "tied_countries": 0,
+    "comparison_basis": "exact_common_country_source_channel_dates_only",
+    "strict_GFA_accuracy_claim": false
+  },
+  "six_nontraining_fiveyear_RES": [
+    {
+      "sector": "residential",
+      "label_relation": "exposed_nontraining_country_native_diagnostic",
+      "pair_kind": "fixed_endpoint",
+      "years_elapsed": 5,
+      "countries": 6,
+      "pairs": 6,
+      "candidate_score": 4.343018437899938,
+      "control_score": 4.389228398596558,
+      "candidate_minus_control": -0.046209960696619125,
+      "improved_countries": 4,
+      "regressed_countries": 2,
+      "tied_countries": 0,
+      "same_definition_GFA_accuracy": false
+    }
+  ],
+  "stable_existing_native_trend_improvement": false,
+  "recommendation": "Retain current public default. Keep dynamic composition as a documented optional research scenario; no independent floor-function NRES validation is established.",
+  "global_GFA_accuracy_identified": false,
+  "sector_classification_accuracy_identified": false,
+  "future_operational_vintage_validation": false,
+  "true2030_outcomes_available": false,
+  "reference_exposure": "Existing sources previously viewed; no pristine blind claim",
+  "global_prediction_freeze_sha256": "6886074c897ecd845e3cd21e9159020b9d9626be49107bd567c975f4c69de51a",
+  "postscore_retuning": false,
+  "default_promoted": false
+}

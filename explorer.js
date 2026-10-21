@@ -51,10 +51,21 @@
   function number(v,d=2){return finite(v)?new Intl.NumberFormat('en-US',{minimumFractionDigits:0,maximumFractionDigits:d}).format(v):'Unavailable';}
   function signed(v,d=2){return finite(v)?(v>0?'+':'')+number(v,d):'Unavailable';}
   function area(v,u,sign=false){if(!finite(v))return 'Unavailable';const a=v/u.scale,precision=Math.abs(a)>0&&Math.abs(a)<.001?8:Math.abs(a)<.1?4:Math.abs(a)<10?3:2;return (sign&&v>0?'+':'')+number(a,precision);}
-  function makeCSV(rows,country,name,core,start,end){
-    const header=['country_id','country_name','year','total_gfa_m2','residential_gfa_m2','non_residential_gfa_m2','total_scenario_min_m2','total_scenario_max_m2','residential_scenario_min_m2','residential_scenario_max_m2','non_residential_scenario_min_m2','non_residential_scenario_max_m2','total_annual_net_change_m2','total_annual_growth_percent','estimate_role','core194_included','selected_interval','uncertainty_role'];
+  function compositionBasis(data,country,year){
+    if(year===2020)return 'Preserved 2020 sector anchors';
+    if(country==='WORLD')return 'Country-specific GHSL allocation / retained fallbacks';
+    const row=data.countries[country]?.composition?.find(r=>r.year===year);
+    if(!row)return 'Retained v16 sector path';
+    if(!row.updated)return row.role.includes('zero_source')?'Retained v16 · zero source reference':'Retained v16 · no qualified epoch bundle';
+    if(year===2015)return 'GHSL modeled epoch · '+row.grid_m+' m';
+    if(year<2020)return 'GHSL historical interpolation';
+    if(year===2025||year===2030)return 'GHSL projected epoch · '+row.grid_m+' m';
+    return 'Interpolation involving GHSL projections';
+  }
+  function makeCSV(rows,country,name,core,start,end,metadata={}){
+    const header=['country_id','country_name','year','total_gfa_m2','residential_gfa_m2','non_residential_gfa_m2','total_scenario_min_m2','total_scenario_max_m2','residential_scenario_min_m2','residential_scenario_max_m2','non_residential_scenario_min_m2','non_residential_scenario_max_m2','total_annual_net_change_m2','total_annual_growth_percent','estimate_role','core194_included','selected_interval','uncertainty_role','model_version','sector_split_basis'];
     const cell=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
-    return [header,...rows.map((r,i)=>[country,name,...r, i?r[1]-rows[i-1][1]:'',i?100*(r[1]/rows[i-1][1]-1):'',country==='PSE'&&r[0]>=2023?'counterfactual_unadjusted_stock_baseline':phase(r[0]),core,r[0]>=start&&r[0]<=end,'37 structural sensitivity scenarios; not calibrated confidence intervals'])].map(r=>r.map(cell).join(',')).join('\r\n');
+    return [header,...rows.map((r,i)=>[country,name,...r, i?r[1]-rows[i-1][1]:'',i?100*(r[1]/rows[i-1][1]-1):'',country==='PSE'&&r[0]>=2023?'counterfactual_unadjusted_stock_baseline':phase(r[0]),core,r[0]>=start&&r[0]<=end,metadata.uncertainty_role||'37 structural sensitivity scenarios; not calibrated confidence intervals',metadata.version||'v16',metadata.countries?compositionBasis(metadata,country,r[0]):'Retained v16 sector path'])].map(r=>r.map(cell).join(',')).join('\r\n');
   }
   function tickStep(maximum){const raw=maximum/4,p=10**Math.floor(Math.log10(raw||1));return [1,2,2.5,5,10].map(v=>v*p).find(v=>v>=raw)||10*p;}
   function buildSVG(rows,s,u,width=1060,name='Country'){
@@ -112,7 +123,7 @@
       return {f,use,isPrior,used,indirect};
     }).filter(({f,use,used})=>(group==='all'||f.group===group)&&(!search||[f.label,f.id,f.source,f.group_label].join(' ').toLowerCase().includes(search.toLowerCase()))&&(status==='all'||status==='used'&&used||status==='unused'&&!used||status==='annual'&&use[1]||status==='static'&&use[3]));
   }
-  const api={SECTORS,phase,normalizeSelection,moveEndpoint,yearAtPlotX,series,statistics,chartValues,units,makeCSV,buildSVG,factorRows};
+  const api={SECTORS,phase,normalizeSelection,moveEndpoint,yearAtPlotX,series,statistics,chartValues,units,makeCSV,compositionBasis,buildSVG,factorRows};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.GFAExplorer=api;
   if(!root.document||!root.GFA_DATA)return;
@@ -130,14 +141,14 @@
     $('chart-subtitle').textContent='Nominal year-end estimates · '+(state.view==='rate'?'percent':state.view==='index'?'2020 = 100':u.label);
     $('chart').innerHTML=buildSVG(r,state,u,$('chart').clientWidth||1060,name(state.country));
     $('show-range').disabled=state.view!=='level';$('unit').disabled=state.view==='rate'||state.view==='index';
-    $('range-note').textContent=state.view==='level'?'The shaded envelope spans 37 fixed structural sensitivity scenarios. It is not a calibrated confidence interval. All central values are model estimates.':state.view==='index'?'The 2020 index is fixed at 100 by normalization. Relative changes do not validate the absolute 2020 anchor.':'Annual changes compare adjacent nominal year-end stocks. The first year has no preceding-year estimate and remains unavailable. No growth confidence interval is implied.';
+    $('range-note').textContent=state.view==='level'?'The shaded envelope spans 37 coherent sensitivity scenarios, each propagated through the adopted GHSL sector allocation. It conditions on the selected GHSL paths; it is not a calibrated confidence interval.':state.view==='index'?'The 2020 index is fixed at 100 by normalization. Relative changes do not validate the absolute 2020 anchor.':'Annual changes compare adjacent nominal year-end stocks. The first year has no preceding-year estimate and remains unavailable. No growth confidence interval is implied.';
     $('chart').querySelectorAll('[data-year]').forEach(el=>{const show=()=>readout(Number(el.dataset.year));el.addEventListener('mouseenter',show);el.addEventListener('focus',show);el.addEventListener('click',show);});
     if(focusedHandle)$('chart').querySelector(`[data-handle="${focusedHandle}"]`)?.focus({preventScroll:true});
     readout(state.end);
   }
   function readout(year){
     const r=series(D,state.country),row=r.find(v=>v[0]===year),k=SECTORS[state.sector].column,u=units(r,state.sector,state.unit),prev=r.find(v=>v[0]===year-1),growth=prev?100*(row[k]/prev[k]-1):null;
-    $('chart-readout').innerHTML=`<strong>${year}</strong> &nbsp; ${area(row[k],u)} ${u.label} &nbsp; · &nbsp; ${esc(phase(year))}${finite(growth)?' &nbsp; · &nbsp; '+signed(growth)+'% year on year':''}${state.country==='PSE'&&year>=2023?' · Counterfactual baseline; conflict losses not measured':''}`;
+    $('chart-readout').innerHTML=`<strong>${year}</strong> &nbsp; ${area(row[k],u)} ${u.label} &nbsp; · &nbsp; ${esc(phase(year))}${finite(growth)?' &nbsp; · &nbsp; '+signed(growth)+'% year on year':''}${state.sector!=='total'?' · '+esc(compositionBasis(D,state.country,year)):''}${state.country==='PSE'&&year>=2023?' · Counterfactual baseline; conflict losses not measured':''}`;
   }
   function renderMetrics(){
     const r=series(D,state.country),u=units(r,state.sector,state.unit),m=statistics(r,state.sector,state.start,state.end);
@@ -154,13 +165,18 @@
     if(state.country==='WORLD')note.textContent='Balanced sum of 194 countries at every date. The Palestine supplement is excluded from this primary aggregate.';
     else if(state.country==='PSE'){note.className+=' warning';note.textContent='Source-conditioned supplement. The 2020 level uses a shared peer conversion. From 2023 onward this is a counterfactual unadjusted stock baseline: conflict destruction and reconstruction are not measured. It is excluded from the primary global total.';}
     else{const d=D.countries[state.country].flags;note.textContent=(d.extrapolation?'Predictor-range extrapolation flagged. ':'')+'2020 composition: '+(d.donors?'shared peer-median allocation ('+d.donors+' donors).':'conditional source-volume allocation.')+' Research estimate; no calibrated country accuracy score.';}
+    if(D.composition){
+      if(state.country==='WORLD')note.textContent+=' Dynamic GHSL sector allocation covers '+D.composition.historical_countries+' historical and '+D.composition.projected_countries+' future paths in the 195-country roster.';
+      else{const d=D.countries[state.country].flags;note.textContent+=' Sector split: '+(d.dynamic_history?'GHSL 2015–2020 path':'retained v16 history')+'; '+(d.dynamic_future?'GHSL projected 2020/2025/2030 path':'retained v16 future path')+'.';}
+    }
   }
   function renderAnnual(){
     const r=series(D,state.country),u=units(r,state.sector,state.unit),k=SECTORS[state.sector].column;
-    $('annual-table').innerHTML=`<table><thead><tr><th>Year</th><th>Total (${u.short})</th><th>Residential</th><th>Non-residential</th><th>Selected-use net change</th><th>Selected-use growth</th><th>Estimate role</th></tr></thead><tbody>`+r.map((v,i)=>{const prev=r[i-1],delta=prev?v[k]-prev[k]:null,growth=prev?100*(v[k]/prev[k]-1):null;return `<tr class="${v[0]===state.start||v[0]===state.end?'selected-year':''}"><td>${v[0]}</td><td class="num">${area(v[1],u)}</td><td class="num">${area(v[2],u)}</td><td class="num">${area(v[3],u)}</td><td class="num">${area(delta,u,true)}</td><td class="num">${finite(growth)?signed(growth)+'%':'Unavailable'}</td><td class="phase">${esc(state.country==='PSE'&&v[0]>=2023?'Counterfactual baseline':phase(v[0]))}</td></tr>`;}).join('')+'</tbody></table>';
+    $('annual-table').innerHTML=`<table><thead><tr><th>Year</th><th>Total (${u.short})</th><th>Residential</th><th>Non-residential</th><th>Selected-use net change</th><th>Selected-use growth</th><th>Estimate role</th><th>Sector split basis</th></tr></thead><tbody>`+r.map((v,i)=>{const prev=r[i-1],delta=prev?v[k]-prev[k]:null,growth=prev?100*(v[k]/prev[k]-1):null;return `<tr class="${v[0]===state.start||v[0]===state.end?'selected-year':''}"><td>${v[0]}</td><td class="num">${area(v[1],u)}</td><td class="num">${area(v[2],u)}</td><td class="num">${area(v[3],u)}</td><td class="num">${area(delta,u,true)}</td><td class="num">${finite(growth)?signed(growth)+'%':'Unavailable'}</td><td class="phase">${esc(state.country==='PSE'&&v[0]>=2023?'Counterfactual baseline':phase(v[0]))}</td><td>${esc(compositionBasis(D,state.country,v[0]))}</td></tr>`;}).join('')+'</tbody></table>';
   }
   function renderFactors(){
     const list=factorRows(D,state,$('factor-search').value,$('factor-group').value,$('factor-status').value),all=factorRows(D,state),used=all.filter(r=>r.used).length;
+    if($('composition-use-note'))$('composition-use-note').textContent=state.country==='WORLD'?'Additional allocation input now in use: GHSL sector-volume paths for 191 historical and 189 future country series. This source allocates the retained Total; it is outside the 49 fitted-model predictor candidates.':'Additional GHSL allocation for '+name(state.country)+': '+(D.countries[state.country].flags.dynamic_history?'2015/2020 historical volume path used':'historical path retains v16')+'; '+(D.countries[state.country].flags.dynamic_future?'2020/2025/2030 projected volume path used':'future path retains v16')+'. The 2020 sector anchors are preserved.';
     $('factor-summary').innerHTML=`<strong>${used} of ${D.factors.length} candidates ${state.country==='WORLD'?'used somewhere in the country roster':'used for '+esc(name(state.country))}.</strong> ${list.length} shown. Static backgrounds and genuinely annual signals have separate roles.`;
     $('factor-table').innerHTML='<table><thead><tr><th>Factor</th><th>Mechanism</th><th>Period / background role</th><th>Annual timing role</th><th>Historical support</th><th>Source & quality</th></tr></thead><tbody>'+list.map(({f,use,isPrior,used,indirect})=>{
       const global=state.country==='WORLD',role=isPrior?'Horizontal prior':use[0]?(use[3]?'Static context':'Period change'):'Not used';
@@ -208,7 +224,7 @@
   $('end-year').addEventListener('change',e=>{state.end=Number(e.target.value);if(state.end<=state.start)state.start=state.end-1;render();});
   $('chart-view').addEventListener('change',e=>{state.view=e.target.value;render();});$('unit').addEventListener('change',e=>{state.unit=e.target.value;render();});$('show-range').addEventListener('change',e=>{state.range=e.target.checked;renderChart();saveURL();});
   ['factor-search','factor-group','factor-status'].forEach(id=>$(id).addEventListener(id==='factor-search'?'input':'change',renderFactors));
-  $('download-country').addEventListener('click',()=>download(makeCSV(series(D,state.country),state.country,name(state.country),state.country==='WORLD'||D.countries[state.country]?.core,state.start,state.end),`gfa_${state.country}_2015_2030_v16.csv`,'text/csv;charset=utf-8;'));
+  $('download-country').addEventListener('click',()=>download(makeCSV(series(D,state.country),state.country,name(state.country),state.country==='WORLD'||D.countries[state.country]?.core,state.start,state.end,D),`gfa_${state.country}_2015_2030_${D.version}.csv`,'text/csv;charset=utf-8;'));
   $('download-chart').addEventListener('click',()=>{const svg=buildSVG(series(D,state.country),state,units(series(D,state.country),state.sector,state.unit),1060,name(state.country));download(svg,`gfa_${state.country}_${state.sector}_${state.view}_${state.start}_${state.end}.svg`,'image/svg+xml;charset=utf-8;');});
   $('share-view').addEventListener('click',async()=>{try{await root.navigator.clipboard.writeText(root.location.href);toast('View link copied.');}catch{toast('This view is saved in the browser address. Copy that address to share it.');}});
   $('parameter-table').innerHTML='<table><thead><tr><th>Shared coefficient</th><th>Value</th></tr></thead><tbody>'+Object.entries(D.coefficients).map(([n,v])=>`<tr><td>${esc(n.replace(/_/g,' '))}</td><td class="num">${number(v,6)}</td></tr>`).join('')+'</tbody></table>';

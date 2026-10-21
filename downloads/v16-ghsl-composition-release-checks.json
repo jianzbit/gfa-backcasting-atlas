@@ -1,0 +1,18 @@
+{
+  "country_year_rows": 3120,
+  "reporting_countries": 195,
+  "historical_dynamic_countries": 191,
+  "future_dynamic_countries": 189,
+  "scenario_count": 37,
+  "scenario_country_year_rows": 115440,
+  "all_country_Total_values_exactly_preserved": true,
+  "all_country_2020_triplets_exactly_preserved": true,
+  "all37_scenario_Total_paths_exactly_preserved": true,
+  "all37_scenario_2020_components_preserved": true,
+  "new_central_is_frozen_candidate_exact": true,
+  "sector_sensitivity_ranges_recomputed": true,
+  "global_ranges_from_coherent_scenario_sums": true,
+  "source_data_and_fitted_parameters_changed": false,
+  "legacy_snapshot_archived": true,
+  "adoption_is_not_accuracy_certification": true
+}

@@ -1,0 +1,9 @@
+sector,label_relation,pair_kind,years_elapsed,countries,pairs,candidate_score,control_score,candidate_minus_control,improved_countries,regressed_countries,tied_countries,same_definition_GFA_accuracy
+residential,exposed_development_country_fullfit_in_sample,adjacent_native_observations,1,2,6,1.5622931547363375,1.5581367529064352,0.004156401829902179,1,1,0,False
+residential,exposed_development_country_fullfit_in_sample,fixed_endpoint,3,2,4,3.758677150015161,3.7384071544119015,0.02026999560325904,0,2,0,False
+residential,exposed_development_country_fullfit_in_sample,fixed_endpoint,4,2,2,5.49652303379583,5.500633763698257,-0.004110729902427668,1,1,0,False
+residential,exposed_development_country_fullfit_in_sample,fixed_endpoint,5,2,2,1.0615551627024122,1.0436622629187686,0.0178928997836435,1,1,0,False
+residential,exposed_nontraining_country_native_diagnostic,adjacent_native_observations,1,6,22,0.91642017772859,0.9192149353568014,-0.00279475762821133,3,3,0,False
+residential,exposed_nontraining_country_native_diagnostic,fixed_endpoint,3,5,8,2.6590760384557295,2.666051550207576,-0.006975511751846275,3,2,0,False
+residential,exposed_nontraining_country_native_diagnostic,fixed_endpoint,4,3,3,1.465375034530896,1.4744161487558376,-0.009041114224941546,2,1,0,False
+residential,exposed_nontraining_country_native_diagnostic,fixed_endpoint,5,6,6,4.343018437899938,4.389228398596558,-0.046209960696619125,4,2,0,False

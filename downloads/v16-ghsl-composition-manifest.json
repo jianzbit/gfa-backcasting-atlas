@@ -1,0 +1,119 @@
+{
+  "version": "v16-ghsl-composition",
+  "snapshot": "21 October 2026",
+  "countries": 195,
+  "rows": 3120,
+  "global_primary_countries": 194,
+  "atlas_allocation_adopted": true,
+  "BIT_canonical_default_changed": false,
+  "model_refit": false,
+  "new_fitted_parameters": 0,
+  "total_and2020preserved": true,
+  "sector_ranges_recomputed": true,
+  "scenario_count": 37,
+  "scenario_ranges_are_CI": false,
+  "mixed_validation_preserved": true,
+  "scientific_accuracy_upgrade_claim": false,
+  "immutable_scientific_protocol": {
+    "path": "review/2026-10-21-dynamic-sector-composition/model_protocol.json",
+    "sha256": "adeabf9f2bc1ef63a1ed4570d15cc8d6571dcb382cb3ba1ed139b07963dbdada",
+    "bytes": 4412
+  },
+  "adoption_protocol": {
+    "path": "review/2026-10-21-dynamic-sector-atlas/adoption_protocol.json",
+    "sha256": "5f2d9fdd27bca1323f1334b53986c288832206cd056e86701aed14e3894eaf02",
+    "bytes": 15627
+  },
+  "previous_site_archive": {
+    "path": "research-site/downloads/v16-atlas-before-ghsl-composition.zip",
+    "sha256": "30a76d6afa8a310846ba72dc1cdd384adb79229bb80db9f252cf49ad293ce63b",
+    "bytes": 4683846
+  },
+  "inputs": [
+    {
+      "path": "review/2026-10-21-dynamic-sector-atlas/country_year_gfa_2015_2030.csv",
+      "sha256": "4e8b9779f09826198b77986947da1c73b33732aadc859a7a31361fe4508ed2b1",
+      "bytes": 3816877
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-atlas/country_year_scenario_envelopes.csv",
+      "sha256": "b117ed40f07b28c4e3712c84f63ff57a3bf976f81df132030ac47c0b7a6e2c46",
+      "bytes": 1991093
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-atlas/world_gfa_2015_2030.csv",
+      "sha256": "f0033684f722b6f0f5ac44070467abf6ffcd6c9412fa68dc01ea59572f99afeb",
+      "bytes": 7110
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-atlas/world_scenario_envelopes.csv",
+      "sha256": "f59a07a4874547a62678f217162579bd5eabfb6b9377bfd7daf2a1ba14a9ad4b",
+      "bytes": 21676
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/annual_composition_source_paths.csv",
+      "sha256": "00d39a4e4f6a4f31ae83199739e070a2f4011e4e0986a4e30e602096655c40b4",
+      "bytes": 1394107
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/country_composition_coverage.csv",
+      "sha256": "852e0b6ba235619fb5f1bb3c6afcd14eafe6f54b9e3f96c45083b75cb822c64c",
+      "bytes": 8169
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/native_epoch_country_volumes.csv",
+      "sha256": "fbb978b5a5a3a7e5491947e9f236df257b4e3f316ee3ece8b0275d54af9f1256",
+      "bytes": 261483
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/validation_paired_comparison.csv",
+      "sha256": "37dfa624e8e95275021c5bf161c5363f52e7e7b947f2cdda2085418b8b41d66d",
+      "bytes": 8222
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/validation_country_metrics.csv",
+      "sha256": "21fd35e7de0bdd9b5159242b442d24210a3c668551f7f01c82cbb8ef7c2bd319",
+      "bytes": 34752
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/broad_native_interval_paired.csv",
+      "sha256": "cf9741e216de43c4ce7087a208b7e26501eab0545c8c61d97a57ce44d22030be",
+      "bytes": 1419
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/validation_summary.json",
+      "sha256": "1028a93157a5f9af8cb3a47c1d20950d61609c89e3a76806262dabe063292bb3",
+      "bytes": 2260
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/model_protocol.json",
+      "sha256": "adeabf9f2bc1ef63a1ed4570d15cc8d6571dcb382cb3ba1ed139b07963dbdada",
+      "bytes": 4412
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/global_prediction_freeze.json",
+      "sha256": "6886074c897ecd845e3cd21e9159020b9d9626be49107bd567c975f4c69de51a",
+      "bytes": 1472
+    },
+    {
+      "path": "v7/dynamic_sector_composition.py",
+      "sha256": "ee2ee47e39ed6ad0efbcc2130a7e5756a2622bfafbd74eb715c286dc745bd2db",
+      "bytes": 11538
+    },
+    {
+      "path": "scripts/build_dynamic_composition_atlas.py",
+      "sha256": "02ff942412b64021885683ca379174f4904392730f49efb00e58536ececc04ab",
+      "bytes": 11847
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-atlas/release_checks.json",
+      "sha256": "7e30dada12c211c690ae764290d5852a58f5ddf7043fa2b69a330613527c316e",
+      "bytes": 707
+    }
+  ],
+  "exported_data": {
+    "path": "research-site/data/explorer-data.js",
+    "sha256": "76964908958aa9697a204249a82b26c21782de734ad8b227b9dbefe4918b20a7",
+    "bytes": 1865951
+  }
+}

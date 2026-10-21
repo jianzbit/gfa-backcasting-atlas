@@ -1,0 +1,76 @@
+{
+  "version": "v16_dynamic_GHSL_composition_candidate",
+  "frozen_at_utc": "2026-10-21T16:21:55.973132+00:00",
+  "single_candidate": true,
+  "new_fitted_parameters": 0,
+  "country_specific_fitting": false,
+  "preserve": "Every inherited country-year Total;2020Residential/Nonresidential/Total;oldmodels/defaults",
+  "source_epochs": [
+    2015,
+    2020,
+    2025,
+    2030
+  ],
+  "product": "GHS-BUILT-V R2023A; volume not GFA; fixed2018height; predominantNRES,REScomplement",
+  "historical_priority": "Existing fully qualified paired native100m2015/2020 source; if unavailable use newly qualified same-grid1km2015/2020 pair; else retainbaseline composition",
+  "future_priority": "Qualified native1km2020/2025/2030 complete triplet only; else retainbaseline post2020composition",
+  "new_source_requirements": {
+    "unambiguous_native_volume_units": "m3 extensive percell;noextraarea multiplication",
+    "minimum_common_valid_fraction": 0.999999,
+    "minimum_nonoverlapping_country_center_pixels": 5,
+    "all_required_epoch_use_masks": "common mask; nonnegativefinite Total>=NRES; structuralzerosretained; neverpartialnationaltotals",
+    "grid": "exactsameCRS,dimensions,transform acrossallrasters; countrygeometrychecksum; overlapcentersunassigned"
+  },
+  "annual_interpolation": "Interpolate NRES and REScomplement volumes separately within adjacentnative5yearepochs; loglinearwhenbothpositive,linearwhenstructuralzero; noextrapolation acrossmissingepoch",
+  "allocation": "mN(t)=Vn(t)/Vn(2020);mR(t)=Vr(t)/Vr(2020);q(t)=q0*mN/[(1-q0)*mR+q0*mN]. q0=inheritedN2020/Total2020;N(t)=Total(t)*q(t);R(t)=Total(t)-N(t).2020tripletcopiedexactly. Replaces oldcomposition path,notanadditionalgrowthvote.",
+  "structural_zero_reference": "If source2020RorNnotpositive,relative-transferunidentified;retainbaselinecomposition,explicitflag,noepsilon.",
+  "missing_input": "Retainlegacyconditionalcomponents with explicit missing-sourceflag; neverzerosinvented",
+  "temporal_roles": "2015/2020historicalmodeledepochs;2016\u201319modeledinterpolation;2025/2030projectedsourceepochs,intermediatefutureconditionalinterpolation;notnewclassification observations",
+  "validation": {
+    "timing": "globaland13LOCOtransformedpredictionsfrozenbeforescoring",
+    "loco": "Reuseindependentlyrefittedfrozenv16wholecountrymodels;holdoutnevertraining;deterministicoverlayhasnofittedparameters",
+    "native_cohorts": "seven-countryRES/Total,separatewithoutKGZ;reservedLVA/NLD;exposedbroadintervalswithsameexistingseriesbreakgates;keepsectors/horizonsseparate",
+    "controls": "Frozenv16currentcomponents;Totalmustexactlytiebyconstruction",
+    "no_retuning_after_scores": true,
+    "disclosure": "Priorreferenceexposureexists;notpristineblindglobalvalidation;latest-vintagesourcesnotoperationalcutoffforecast",
+    "not_validation": "Sourceepochsusedtoconstructqcannotvalidateq;noindependentalignedGFA-use-sharesadded;no2030truth"
+  },
+  "anomaly_thresholds_fixed_before_output": {
+    "annual_share_change_pp": 2,
+    "fiveyear_share_change_pp": 10,
+    "annual_sector_growth_percent": 10,
+    "onekm_vs_old100m_share_difference_pp": 2
+  },
+  "public_default_promoted": false,
+  "source_transfer_is_conditional_not_validated_GFA_composition": true,
+  "protected_inputs": [
+    {
+      "path": "review/2026-10-16-global-gfa-final/country_year_gfa_2015_2030_final.csv",
+      "sha256": "2be1dcce3b044d8263d5db7899fd949720a5c267f93f0089e73abb9fd985422c"
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/country_year_gfa_2015_2030_v16.csv",
+      "sha256": "057022862a3237e9b9771febc4fc965396eef38203c275659384f442670f1f1d"
+    },
+    {
+      "path": "research-site/index.html",
+      "sha256": "1895977c014d848cd76207735134827910ed6abba91901c697de4b34ceec24b1"
+    },
+    {
+      "path": "research-site/explorer.js",
+      "sha256": "6494e1a33e13fde181b328a5e78f63bd50eef2e6c445b8ac82f83184f9695470"
+    },
+    {
+      "path": "research-site/downloads/v16-country-year-gfa.csv",
+      "sha256": "2be1dcce3b044d8263d5db7899fd949720a5c267f93f0089e73abb9fd985422c"
+    },
+    {
+      "path": "v7/shared_dynamic_stock.py",
+      "sha256": "a852909ae97bf3410044ff43fde8743189581e9f6bcbbd17401af38f64583b2a"
+    },
+    {
+      "path": "review/2026-10-13-historical-sector-composition/epoch_country_sector_volumes.csv",
+      "sha256": "d042f13eddfa5fdb989accee3664b9ef3bf64e94106d1fdb84746704d43ee1c2"
+    }
+  ]
+}
