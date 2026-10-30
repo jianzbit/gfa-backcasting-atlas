@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "models_refitted": 159,
+  "held_labels_excluded": true,
+  "nested_training_normalization": true,
+  "held_donors_excluded": true,
+  "control_replay_matches": true,
+  "anchors_exact": true,
+  "R_plus_NR_equals_Total": true,
+  "net_change_identity": true,
+  "no_negative_stocks": true,
+  "protected_files_unchanged": true,
+  "core_countries": 195,
+  "rows": 3120,
+  "scientific_accuracy": "NOT_ESTABLISHED_BY_ACCOUNTING"
+}

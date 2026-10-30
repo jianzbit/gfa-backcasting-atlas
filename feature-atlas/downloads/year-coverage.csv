@@ -1,0 +1,689 @@
+feature_id,factor_name,year,country_frame,source_present_countries,qualified_interval_countries,B0_prepared_countries,year_role,temporal_resolution,source_annual_data
+F01,annual_log_surface_change_proxy,2015,195,0,0,0,Source/context slot; not growth interval,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2016,195,193,193,193,Historical feature interval,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2017,195,193,193,193,Historical feature interval,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2018,195,193,193,193,Historical feature interval,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2019,195,193,193,193,Historical feature interval,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2020,195,193,193,193,Historical feature interval,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2021,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2022,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2023,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2024,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2025,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2026,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2027,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2028,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2029,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F01,annual_log_surface_change_proxy,2030,195,0,0,0,Not ingested; model continuation only,Five-year epochs; one endpoint trend repeated across intervals,False
+F02,annual_log_population_change,2015,195,194,0,0,Source/context slot; not growth interval,Annual demographic estimates,True
+F02,annual_log_population_change,2016,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F02,annual_log_population_change,2017,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F02,annual_log_population_change,2018,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F02,annual_log_population_change,2019,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F02,annual_log_population_change,2020,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F02,annual_log_population_change,2021,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2022,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2023,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2024,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2025,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2026,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2027,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2028,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2029,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F02,annual_log_population_change,2030,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F03,annual_log_real_gdp_per_capita_change,2015,195,192,0,0,Source/context slot; not growth interval,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2016,195,190,190,190,Historical feature interval,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2017,195,190,190,190,Historical feature interval,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2018,195,190,190,190,Historical feature interval,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2019,195,189,189,189,Historical feature interval,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2020,195,189,189,189,Historical feature interval,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2021,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2022,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2023,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2024,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2025,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2026,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2027,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2028,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2029,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F03,annual_log_real_gdp_per_capita_change,2030,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F04,annual_log_urban_population_change,2015,195,194,0,0,Source/context slot; not growth interval,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2016,195,194,194,194,Historical feature interval,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2017,195,194,194,194,Historical feature interval,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2018,195,194,194,194,Historical feature interval,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2019,195,194,194,194,Historical feature interval,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2020,195,194,194,194,Historical feature interval,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2021,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2022,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2023,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2024,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2025,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2026,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2027,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2028,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2029,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F04,annual_log_urban_population_change,2030,195,0,0,0,Not ingested; model continuation only,Annual derived demographic estimates,True
+F05,interval_log_ppp_gdp_per_capita_level,2015,195,186,0,0,Source/context slot; not growth interval,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2016,195,186,186,186,Historical feature interval,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2017,195,186,186,186,Historical feature interval,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2018,195,186,186,186,Historical feature interval,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2019,195,186,186,186,Historical feature interval,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2020,195,186,186,186,Historical feature interval,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2021,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2022,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2023,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2024,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2025,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2026,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2027,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2028,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2029,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F05,interval_log_ppp_gdp_per_capita_level,2030,195,0,0,0,Not ingested; model continuation only,Annual source level; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2015,195,194,0,0,Source/context slot; not growth interval,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2016,195,194,194,194,Historical feature interval,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2017,195,194,194,194,Historical feature interval,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2018,195,194,194,194,Historical feature interval,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2019,195,194,194,194,Historical feature interval,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2020,195,194,194,194,Historical feature interval,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2021,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2022,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2023,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2024,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2025,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2026,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2027,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2028,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2029,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F06,interval_urban_population_fraction,2030,195,0,0,0,Not ingested; model continuation only,Annual source share; frozen B0 uses final historical context,True
+F07,interval_log_built_surface_per_capita_proxy,2015,195,0,0,0,Source/context slot; not growth interval,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2016,195,193,193,193,Historical feature interval,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2017,195,193,193,193,Historical feature interval,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2018,195,193,193,193,Historical feature interval,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2019,195,193,193,193,Historical feature interval,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2020,195,193,193,193,Historical feature interval,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2021,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2022,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2023,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2024,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2025,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2026,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2027,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2028,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2029,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F07,interval_log_built_surface_per_capita_proxy,2030,195,0,0,0,Not ingested; model continuation only,Interpolated surface × annual demographic context,False
+F08,annual_log1p_viirs_radiance_change,2015,195,193,0,0,Source/context slot; not growth interval,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2016,195,193,193,193,Historical feature interval,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2017,195,193,193,193,Historical feature interval,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2018,195,193,193,193,Historical feature interval,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2019,195,193,193,193,Historical feature interval,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2020,195,193,193,193,Historical feature interval,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2021,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2022,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2023,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2024,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2025,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2026,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2027,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2028,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2029,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F08,annual_log1p_viirs_radiance_change,2030,195,0,0,0,Not ingested; model continuation only,Annual satellite composites,True
+F09,annual_log_impervious_area_change,2015,195,157,0,0,Source/context slot; not growth interval,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2016,195,157,156,156,Historical feature interval,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2017,195,157,156,156,Historical feature interval,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2018,195,157,156,156,Historical feature interval,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2019,195,157,156,156,Historical feature interval,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2020,195,157,156,156,Historical feature interval,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2021,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2022,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2023,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2024,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2025,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2026,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2027,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2028,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2029,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F09,annual_log_impervious_area_change,2030,195,0,0,0,Not ingested; model continuation only,Annual modelled land-cover maps; fixed-mask qualification,True
+F10,annual_log_building_presence_change,2015,195,0,0,0,Source/context slot; not growth interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2016,195,1,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2017,195,2,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2018,195,2,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2019,195,3,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2020,195,3,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2021,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2022,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2023,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2024,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2025,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2026,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2027,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2028,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2029,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F10,annual_log_building_presence_change,2030,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2015,195,0,0,0,Source/context slot; not growth interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2016,195,1,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2017,195,2,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2018,195,2,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2019,195,3,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2020,195,3,0,0,Historical feature interval,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2021,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2022,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2023,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2024,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2025,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2026,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2027,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2028,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2029,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F11,annual_log_building_count_change,2030,195,0,0,0,Not ingested; model continuation only,Annual 2016–2023 modelled midyear product; local intake unqualified,True
+F12,annual_log_building_height_change,2015,195,0,0,0,Source/context slot; not growth interval,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2016,195,1,0,0,Historical feature interval,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2017,195,2,0,0,Historical feature interval,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2018,195,2,0,0,Historical feature interval,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2019,195,3,0,0,Historical feature interval,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2020,195,3,0,0,Historical feature interval,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2021,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2022,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2023,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2024,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2025,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2026,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2027,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2028,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2029,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F12,annual_log_building_height_change,2030,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear mean height; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2015,195,0,0,0,Source/context slot; not growth interval,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2016,195,1,0,0,Historical feature interval,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2017,195,2,0,0,Historical feature interval,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2018,195,2,0,0,Historical feature interval,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2019,195,3,0,0,Historical feature interval,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2020,195,3,0,0,Historical feature interval,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2021,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2022,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2023,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2024,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2025,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2026,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2027,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2028,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2029,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F13,annual_log_building_volume_proxy_change,2030,195,0,0,0,Not ingested; model continuation only,Annual modelled midyear product; local intake unqualified,True
+F14,nonres_volume_share,2015,195,0,0,0,Source/context slot; not growth interval,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2016,195,0,0,0,Historical feature interval,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2017,195,0,0,0,Historical feature interval,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2018,195,0,0,0,Historical feature interval,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2019,195,0,0,0,Historical feature interval,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2020,195,186,186,186,Historical feature interval,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2021,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2022,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2023,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2024,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2025,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2026,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2027,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2028,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2029,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F14,nonres_volume_share,2030,195,0,0,0,Not ingested; model continuation only,Static 2020 composition with 2018 height assumptions,False
+F15,urban_core_building_density,2015,195,0,0,0,Source/context slot; not growth interval,Static epoch morphology,False
+F15,urban_core_building_density,2016,195,0,0,0,Historical feature interval,Static epoch morphology,False
+F15,urban_core_building_density,2017,195,0,0,0,Historical feature interval,Static epoch morphology,False
+F15,urban_core_building_density,2018,195,0,0,0,Historical feature interval,Static epoch morphology,False
+F15,urban_core_building_density,2019,195,0,0,0,Historical feature interval,Static epoch morphology,False
+F15,urban_core_building_density,2020,195,167,167,167,Historical feature interval,Static epoch morphology,False
+F15,urban_core_building_density,2021,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2022,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2023,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2024,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2025,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2026,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2027,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2028,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2029,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F15,urban_core_building_density,2030,195,0,0,0,Not ingested; model continuation only,Static epoch morphology,False
+F16,core_periphery_endpoint_growth_difference,2015,195,0,0,0,Source/context slot; not growth interval,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2016,195,0,0,0,Historical feature interval,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2017,195,0,0,0,Historical feature interval,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2018,195,0,0,0,Historical feature interval,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2019,195,0,0,0,Historical feature interval,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2020,195,166,166,166,Historical feature interval,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2021,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2022,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2023,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2024,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2025,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2026,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2027,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2028,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2029,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F16,core_periphery_endpoint_growth_difference,2030,195,0,0,0,Not ingested; model continuation only,Static contrast between two endpoint growth rates,False
+F17,annual_log_real_construction_value_added_change,2015,195,138,0,0,Source/context slot; not growth interval,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2016,195,144,118,112,Historical feature interval,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2017,195,145,121,118,Historical feature interval,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2018,195,147,122,121,Historical feature interval,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2019,195,144,120,119,Historical feature interval,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2020,195,142,118,118,Historical feature interval,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2021,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2022,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2023,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2024,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2025,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2026,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2027,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2028,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2029,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F17,annual_log_real_construction_value_added_change,2030,195,0,0,0,Not ingested; model continuation only,Annual national accounts; consistent calendar/base qualification,True
+F18,annual_log_real_construction_value_added_change_lag1,2015,195,0,0,0,Source/context slot; not growth interval,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2016,195,112,112,112,Historical feature interval,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2017,195,118,118,118,Historical feature interval,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2018,195,121,121,121,Historical feature interval,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2019,195,122,122,122,Historical feature interval,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2020,195,120,120,120,Historical feature interval,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2021,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2022,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2023,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2024,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2025,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2026,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2027,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2028,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2029,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F18,annual_log_real_construction_value_added_change_lag1,2030,195,0,0,0,Not ingested; model continuation only,Derived one-year lag of F17,True
+F19,annual_log_residential_investment_change,2015,195,37,0,0,Source/context slot; not growth interval,Annual real investment index,True
+F19,annual_log_residential_investment_change,2016,195,37,36,0,Historical feature interval,Annual real investment index,True
+F19,annual_log_residential_investment_change,2017,195,37,37,36,Historical feature interval,Annual real investment index,True
+F19,annual_log_residential_investment_change,2018,195,37,37,37,Historical feature interval,Annual real investment index,True
+F19,annual_log_residential_investment_change,2019,195,37,37,37,Historical feature interval,Annual real investment index,True
+F19,annual_log_residential_investment_change,2020,195,37,37,37,Historical feature interval,Annual real investment index,True
+F19,annual_log_residential_investment_change,2021,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2022,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2023,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2024,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2025,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2026,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2027,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2028,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2029,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F19,annual_log_residential_investment_change,2030,195,0,0,0,Not ingested; model continuation only,Annual real investment index,True
+F20,annual_log_building_permits_change,2015,195,33,0,0,Source/context slot; not growth interval,Annual permit index,True
+F20,annual_log_building_permits_change,2016,195,33,33,0,Historical feature interval,Annual permit index,True
+F20,annual_log_building_permits_change,2017,195,33,33,33,Historical feature interval,Annual permit index,True
+F20,annual_log_building_permits_change,2018,195,33,33,33,Historical feature interval,Annual permit index,True
+F20,annual_log_building_permits_change,2019,195,33,33,33,Historical feature interval,Annual permit index,True
+F20,annual_log_building_permits_change,2020,195,33,33,33,Historical feature interval,Annual permit index,True
+F20,annual_log_building_permits_change,2021,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2022,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2023,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2024,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2025,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2026,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2027,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2028,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2029,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F20,annual_log_building_permits_change,2030,195,0,0,0,Not ingested; model continuation only,Annual permit index,True
+F21,annual_log_construction_employment_change,2015,195,35,0,0,Source/context slot; not growth interval,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2016,195,35,35,35,Historical feature interval,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2017,195,35,35,35,Historical feature interval,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2018,195,35,35,35,Historical feature interval,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2019,195,35,35,35,Historical feature interval,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2020,195,35,34,34,Historical feature interval,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2021,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2022,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2023,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2024,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2025,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2026,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2027,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2028,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2029,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F21,annual_log_construction_employment_change,2030,195,0,0,0,Not ingested; model continuation only,Annual construction employment index,True
+F22,annual_log_other_buildings_structures_investment_change,2015,195,36,0,0,Source/context slot; not growth interval,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2016,195,36,35,0,Historical feature interval,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2017,195,36,36,35,Historical feature interval,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2018,195,36,36,36,Historical feature interval,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2019,195,36,36,36,Historical feature interval,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2020,195,36,36,36,Historical feature interval,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2021,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2022,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2023,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2024,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2025,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2026,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2027,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2028,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2029,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F22,annual_log_other_buildings_structures_investment_change,2030,195,0,0,0,Not ingested; model continuation only,Annual real investment index including structures,True
+F23,annual_log_construction_cost_change,2015,195,26,0,0,Source/context slot; not growth interval,Annual cost index,True
+F23,annual_log_construction_cost_change,2016,195,26,26,26,Historical feature interval,Annual cost index,True
+F23,annual_log_construction_cost_change,2017,195,26,26,26,Historical feature interval,Annual cost index,True
+F23,annual_log_construction_cost_change,2018,195,26,26,26,Historical feature interval,Annual cost index,True
+F23,annual_log_construction_cost_change,2019,195,26,26,26,Historical feature interval,Annual cost index,True
+F23,annual_log_construction_cost_change,2020,195,26,26,26,Historical feature interval,Annual cost index,True
+F23,annual_log_construction_cost_change,2021,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2022,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2023,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2024,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2025,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2026,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2027,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2028,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2029,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F23,annual_log_construction_cost_change,2030,195,0,0,0,Not ingested; model continuation only,Annual cost index,True
+F24,annual_log_nonresidential_building_investment_change,2015,195,0,0,0,Source/context slot; not growth interval,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2016,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2017,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2018,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2019,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2020,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2021,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2022,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2023,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2024,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2025,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2026,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2027,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2028,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2029,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F24,annual_log_nonresidential_building_investment_change,2030,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2015,195,0,0,0,Source/context slot; not growth interval,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2016,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2017,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2018,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2019,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2020,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2021,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2022,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2023,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2024,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2025,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2026,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2027,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2028,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2029,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F25,annual_log_building_completions_change,2030,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F26,annual_log_cement_production_change,2015,195,0,0,0,Source/context slot; not growth interval,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2016,195,139,0,0,Historical feature interval,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2017,195,139,136,136,Historical feature interval,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2018,195,139,136,136,Historical feature interval,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2019,195,138,135,135,Historical feature interval,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2020,195,139,135,135,Historical feature interval,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2021,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2022,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2023,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2024,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2025,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2026,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2027,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2028,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2029,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F26,annual_log_cement_production_change,2030,195,0,0,0,Not ingested; model continuation only,Annual production; local source levels 2016–2020,True
+F27,annual_log_real_gfcf_change,2015,195,164,0,0,Source/context slot; not growth interval,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2016,195,154,154,0,Historical feature interval,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2017,195,153,153,153,Historical feature interval,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2018,195,153,153,153,Historical feature interval,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2019,195,152,152,152,Historical feature interval,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2020,195,152,152,152,Historical feature interval,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2021,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2022,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2023,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2024,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2025,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2026,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2027,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2028,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2029,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F27,annual_log_real_gfcf_change,2030,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F28,annual_log_working_age_population_change,2015,195,194,0,0,Source/context slot; not growth interval,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2016,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2017,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2018,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2019,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2020,195,194,194,194,Historical feature interval,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2021,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2022,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2023,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2024,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2025,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2026,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2027,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2028,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2029,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F28,annual_log_working_age_population_change,2030,195,0,0,0,Not ingested; model continuation only,Annual demographic estimates,True
+F29,net_migration_per1000_population,2015,195,194,0,0,Source/context slot; not growth interval,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2016,195,194,194,194,Historical feature interval,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2017,195,194,194,194,Historical feature interval,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2018,195,194,194,194,Historical feature interval,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2019,195,194,194,194,Historical feature interval,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2020,195,194,194,194,Historical feature interval,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2021,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2022,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2023,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2024,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2025,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2026,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2027,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2028,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2029,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F29,net_migration_per1000_population,2030,195,0,0,0,Not ingested; model continuation only,"Annual WDI intake, retrieved 2026-10-08; demographic estimates",True
+F30,real_interest_rate_fraction,2015,195,131,0,0,Source/context slot; not growth interval,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2016,195,129,129,129,Historical feature interval,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2017,195,123,123,123,Historical feature interval,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2018,195,118,118,118,Historical feature interval,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2019,195,115,115,115,Historical feature interval,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2020,195,110,110,110,Historical feature interval,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2021,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2022,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2023,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2024,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2025,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2026,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2027,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2028,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2029,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F30,real_interest_rate_fraction,2030,195,0,0,0,Not ingested; model continuation only,Annual source; frozen B0 uses final historical context,True
+F31,annual_log_real_services_va_change,2015,195,187,0,0,Source/context slot; not growth interval,Annual national accounts,True
+F31,annual_log_real_services_va_change,2016,195,184,184,184,Historical feature interval,Annual national accounts,True
+F31,annual_log_real_services_va_change,2017,195,184,184,184,Historical feature interval,Annual national accounts,True
+F31,annual_log_real_services_va_change,2018,195,184,184,184,Historical feature interval,Annual national accounts,True
+F31,annual_log_real_services_va_change,2019,195,183,183,183,Historical feature interval,Annual national accounts,True
+F31,annual_log_real_services_va_change,2020,195,183,183,183,Historical feature interval,Annual national accounts,True
+F31,annual_log_real_services_va_change,2021,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2022,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2023,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2024,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2025,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2026,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2027,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2028,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2029,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F31,annual_log_real_services_va_change,2030,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2015,195,179,0,0,Source/context slot; not growth interval,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2016,195,175,175,175,Historical feature interval,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2017,195,175,175,175,Historical feature interval,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2018,195,174,174,174,Historical feature interval,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2019,195,174,174,174,Historical feature interval,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2020,195,174,174,174,Historical feature interval,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2021,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2022,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2023,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2024,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2025,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2026,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2027,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2028,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2029,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F32,annual_log_real_manufacturing_va_change,2030,195,0,0,0,Not ingested; model continuation only,Annual national accounts,True
+F33,private_credit_gdp_share_change_fraction,2015,195,171,0,0,Source/context slot; not growth interval,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2016,195,172,170,170,Historical feature interval,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2017,195,170,169,169,Historical feature interval,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2018,195,168,167,167,Historical feature interval,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2019,195,169,168,168,Historical feature interval,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2020,195,165,165,165,Historical feature interval,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2021,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2022,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2023,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2024,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2025,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2026,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2027,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2028,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2029,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F33,private_credit_gdp_share_change_fraction,2030,195,0,0,0,Not ingested; model continuation only,Annual ratio change,True
+F34,annual_log_private_sector_credit_change,2015,195,0,0,0,Source/context slot; not growth interval,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2016,195,0,0,0,Historical feature interval,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2017,195,0,0,0,Historical feature interval,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2018,195,0,0,0,Historical feature interval,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2019,195,0,0,0,Historical feature interval,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2020,195,0,0,0,Historical feature interval,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2021,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2022,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2023,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2024,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2025,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2026,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2027,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2028,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2029,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F34,annual_log_private_sector_credit_change,2030,195,0,0,0,Not ingested; model continuation only,Unavailable/unsuitable in archived API intake,False
+F35,annual_log_household_count_change,2015,195,0,0,0,Source/context slot; not growth interval,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2016,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2017,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2018,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2019,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2020,195,0,0,0,Historical feature interval,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2021,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2022,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2023,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2024,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2025,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2026,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2027,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2028,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2029,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F35,annual_log_household_count_change,2030,195,0,0,0,Not ingested; model continuation only,Unavailable in frozen intake,False
+F36,average_household_size,2015,195,24,0,0,Source/context slot; not growth interval,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2016,195,20,0,0,Historical feature interval,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2017,195,15,0,0,Historical feature interval,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2018,195,20,0,0,Historical feature interval,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2019,195,22,0,0,Historical feature interval,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2020,195,15,0,0,Historical feature interval,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2021,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2022,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2023,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2024,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2025,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2026,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2027,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2028,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2029,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F36,average_household_size,2030,195,0,0,0,Not ingested; model continuation only,"Sparse survey/census dates, not a comparable annual series",False
+F37,annual_log_urban_population_density_change,2015,195,0,0,0,Source/context slot; not growth interval,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2016,195,0,0,0,Historical feature interval,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2017,195,0,0,0,Historical feature interval,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2018,195,0,0,0,Historical feature interval,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2019,195,0,0,0,Historical feature interval,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2020,195,0,0,0,Historical feature interval,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2021,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2022,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2023,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2024,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2025,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2026,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2027,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2028,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2029,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F37,annual_log_urban_population_density_change,2030,195,0,0,0,Not ingested; model continuation only,No qualified annual matched boundary,False
+F38,disaster_affected_per1000_population,2015,195,110,0,0,Source/context slot; not growth interval,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2016,195,112,112,112,Historical feature interval,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2017,195,119,119,119,Historical feature interval,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2018,195,108,108,108,Historical feature interval,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2019,195,107,107,107,Historical feature interval,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2020,195,103,103,103,Historical feature interval,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2021,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2022,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2023,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2024,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2025,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2026,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2027,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2028,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2029,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F38,disaster_affected_per1000_population,2030,195,0,0,0,Not ingested; model continuation only,Annual reported/revised disaster context,True
+F39,conflict_deaths_per1000_population,2015,195,194,0,0,Source/context slot; not growth interval,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2016,195,194,193,193,Historical feature interval,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2017,195,194,193,193,Historical feature interval,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2018,195,194,193,193,Historical feature interval,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2019,195,194,193,193,Historical feature interval,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2020,195,194,193,193,Historical feature interval,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2021,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2022,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2023,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2024,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2025,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2026,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2027,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2028,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2029,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F39,conflict_deaths_per1000_population,2030,195,0,0,0,Not ingested; model continuation only,Annual reported/revised conflict context,True
+F40,older_built_surface_share,2015,195,0,0,0,Source/context slot; not growth interval,Static endpoint context,False
+F40,older_built_surface_share,2016,195,0,0,0,Historical feature interval,Static endpoint context,False
+F40,older_built_surface_share,2017,195,0,0,0,Historical feature interval,Static endpoint context,False
+F40,older_built_surface_share,2018,195,0,0,0,Historical feature interval,Static endpoint context,False
+F40,older_built_surface_share,2019,195,0,0,0,Historical feature interval,Static endpoint context,False
+F40,older_built_surface_share,2020,195,186,186,186,Historical feature interval,Static endpoint context,False
+F40,older_built_surface_share,2021,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2022,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2023,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2024,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2025,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2026,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2027,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2028,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2029,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F40,older_built_surface_share,2030,195,0,0,0,Not ingested; model continuation only,Static endpoint context,False
+F41,annual_log1p_built_weighted_viirs_change,2015,195,192,0,0,Source/context slot; not growth interval,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2016,195,192,192,192,Historical feature interval,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2017,195,192,192,192,Historical feature interval,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2018,195,192,192,192,Historical feature interval,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2019,195,192,192,192,Historical feature interval,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2020,195,192,192,192,Historical feature interval,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2021,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2022,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2023,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2024,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2025,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2026,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2027,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2028,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2029,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F41,annual_log1p_built_weighted_viirs_change,2030,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed built support,True
+F42,annual_log1p_urban_core_viirs_change,2015,195,173,0,0,Source/context slot; not growth interval,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2016,195,173,173,173,Historical feature interval,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2017,195,173,173,173,Historical feature interval,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2018,195,173,173,173,Historical feature interval,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2019,195,173,173,173,Historical feature interval,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2020,195,173,173,173,Historical feature interval,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2021,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2022,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2023,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2024,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2025,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2026,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2027,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2028,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2029,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F42,annual_log1p_urban_core_viirs_change,2030,195,0,0,0,Not ingested; model continuation only,Annual composite on fixed core support,True
+F43,annual_log_ama_construction_change_unqualified,2015,195,193,0,0,Source/context slot; not growth interval,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2016,195,193,0,0,Historical feature interval,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2017,195,193,0,0,Historical feature interval,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2018,195,193,0,0,Historical feature interval,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2019,195,193,0,0,Historical feature interval,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2020,195,193,0,0,Historical feature interval,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2021,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2022,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2023,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2024,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2025,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2026,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2027,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2028,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2029,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True
+F43,annual_log_ama_construction_change_unqualified,2030,195,0,0,0,Not ingested; model continuation only,Annual homogeneous reported/estimated series; inactive,True

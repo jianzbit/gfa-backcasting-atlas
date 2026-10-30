@@ -1,0 +1,166 @@
+{
+  "id": "B0-feature-reassessment-20261030-v1",
+  "frozen_at_utc": "2026-10-30T19:47:22.038476+00:00",
+  "reference_status": "EXPOSED_DEVELOPMENT_EVIDENCE; no untouched or global accuracy claim",
+  "unchanged": [
+    "2020 anchors",
+    "source data and qualification masks",
+    "sector allocation",
+    "horizontal prior",
+    "future continuation",
+    "seven shared coefficients and penalties",
+    "operational B0 and P1"
+  ],
+  "feature_screen": {
+    "reference_panels_separate": true,
+    "window": "2016–2020",
+    "target": "native adjacent-year percentage stock growth",
+    "comparison": "train-country mean versus mean plus one standardized feature",
+    "preprocessing": "B0 lag-prepared qualified features; static final historical summary only; train-only weighted mean and RMS; no source imputation",
+    "ridge": 1.0,
+    "country_budget": 1.0,
+    "minimum_training_countries": 3,
+    "minimum_test_intervals": 3,
+    "formula": "yhat=mean_train(y)+sd_train(y)*b*z; b=sum(w*z*y_standardized)/(sum(w*z*z)+1)",
+    "evaluation": "held-country matched-sample macro MAE; baseline scored on identical rows; absence has no fabricated prediction",
+    "interpretation": "marginal retrospective usefulness, not incremental full-B0 ablation, forecast skill or causal effect",
+    "associations": "within-country demeaned Pearson and rank correlation; leave-one-country-out sign stability, descriptive only; no p-value selection"
+  },
+  "pooling_study": {
+    "formula": "family_weight(f,rho)=original_family_weight(f)**(1-rho)",
+    "choices": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "meaning": [
+      "current priors",
+      "partially flattened priors",
+      "equal family weights within each existing axis"
+    ],
+    "parameter_budget": "one discrete shared pooling choice; seven existing coefficients refitted; no 43-variable free weighting",
+    "quality_weights": "unchanged; unavailable and static features never become annual evidence",
+    "selection": "inner whole-country exclusion; mean of per-country, source/channel-balanced absolute native log-ratio errors x100; all eligible nonanchor observations",
+    "ties": "within1e-10, prefer smaller rho (closer to fixed B0)",
+    "outer": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU",
+      "FIN",
+      "JPN",
+      "NLD"
+    ],
+    "training": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU"
+    ],
+    "inner_exclusion": "exclude both outer and inner countries from every label-dependent fit, normalization, leverage and composition donors",
+    "extra_countries": "not used in original seven-country fitting; exposed five-country diagnostic records, not untouched final tests",
+    "evaluation": "native RES and native Total separately; common-anchor annual and five-year stock-increment diagnostics; no origin-valid forecast claim",
+    "no_post_score_expansion": true,
+    "no_automatic_promotion": true
+  },
+  "protected_files": [
+    {
+      "path": "review/2026-10-29-development-freeze/artifacts/B0_country_year.csv",
+      "sha256": "ca91fafdc8bc2e1f3d60105121823463a2130faaf0cb5815078e852675fefea1",
+      "bytes": 3782498
+    },
+    {
+      "path": "review/2026-10-29-development-freeze/artifacts/P1_05904_country_year.csv",
+      "sha256": "b9db05f308e5b7f4a86bea5d96e1bc2692867d2b716c8bbf997b52d095063e90",
+      "bytes": 4811156
+    },
+    {
+      "path": "research-site/showcase/data.js",
+      "sha256": "bc2a695aab2c0c7cd5ffad5fa5209c9dc3fbc948d333394f699f9d41b9f88da4",
+      "bytes": 668672
+    },
+    {
+      "path": "research-site/showcase/atlas.js",
+      "sha256": "fcdf6b32c50d7591b79019518daf65ffb0d9576502da2ad389c6b253155c8e9f",
+      "bytes": 21847
+    },
+    {
+      "path": "v7/shared_dynamic_stock.py",
+      "sha256": "a852909ae97bf3410044ff43fde8743189581e9f6bcbbd17401af38f64583b2a",
+      "bytes": 26170
+    },
+    {
+      "path": "v7/backcast_observation_dynamic.py",
+      "sha256": "92837c20ce936a934727ac99f0a9b08e96e347e08e2c927897b85fd019cdf396",
+      "bytes": 16569
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/fitted_model.json",
+      "sha256": "d1d72ad19f54a67e92c30b9d5684cfdf2732501af13b4cca2ae80c3097142d85",
+      "bytes": 22414
+    }
+  ],
+  "source_files": [
+    {
+      "path": "review/2026-10-30-feature-inventory/feature_inventory_F01_F43.csv",
+      "sha256": "31cd101cf185471545f49be906b964528e9466d02caf68e69d745d23b9a24d69",
+      "bytes": 141858
+    },
+    {
+      "path": "review/2026-10-30-feature-inventory/reference_annual_pairs.csv",
+      "sha256": "9ad83347d309d0405fc32dd06971503a2ed29fe10b574e96ba280cceab35f94c",
+      "bytes": 13334
+    },
+    {
+      "path": "review/2026-10-30-feature-inventory/reference_cumulative_pairs.csv",
+      "sha256": "31505c7e3729ae5c5a05ead27795e1f21d6da6e2ca324d8edc28dfcec4cde11d",
+      "bytes": 2338
+    },
+    {
+      "path": "review/2026-10-30-feature-inventory/reference_associations.csv",
+      "sha256": "d928e024228c6ab3f8e037a538544a0404317164b990bc4c7ce754ee2e828c89",
+      "bytes": 24391
+    },
+    {
+      "path": "review/2026-10-30-feature-inventory/within_category_vif.csv",
+      "sha256": "2cbc0e4e0937c91ce81939b59bf71bd50bb0102d8132e8ba54a6e4251e1c3703",
+      "bytes": 30792
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/inputs/country_year_inputs_2015_2030.csv",
+      "sha256": "502488b8586f8f72ff833f074f5f41aa8f804131cbceeb492fafc4e259410232",
+      "bytes": 11690710
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/observations/development_observations.csv",
+      "sha256": "4e13cbd7443b7f57af7d3975b0fc4755f4cd01f1a6d22ad2372c5eebaee5af27",
+      "bytes": 77830
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/inputs/factor_temporal_semantics.csv",
+      "sha256": "3dccabba3e5e4a44f192a76e22b89e9eedb9d0a2e55c1bf44c1ae8da9ba1ca89",
+      "bytes": 16375
+    },
+    {
+      "path": "review/2026-10-29-five-country-validation/references.csv",
+      "sha256": "fdfef54eb9fa54f487540656fd0594416b51704b5f2e0bb44864bc9aa5f06fa8",
+      "bytes": 27825
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/annual_composition_source_paths.csv",
+      "sha256": "00d39a4e4f6a4f31ae83199739e070a2f4011e4e0986a4e30e602096655c40b4",
+      "bytes": 1394107
+    },
+    {
+      "path": "scripts/reassess_b0_features.py",
+      "sha256": "8585362d275bcf4fc71f76f5d7f105dbd4dbd4673cbfa9f3198905d24cc97d28",
+      "bytes": 42903
+    }
+  ]
+}

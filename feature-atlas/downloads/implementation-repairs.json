@@ -1,0 +1,31 @@
+{
+  "at_utc": "2026-10-30T19:48:54.764711+00:00",
+  "path": "scripts/reassess_b0_features.py",
+  "previous_sha256": "8585362d275bcf4fc71f76f5d7f105dbd4dbd4673cbfa9f3198905d24cc97d28",
+  "repaired_sha256": "f5f18962d7abcad2217cf5f1b6630c2de9e08db6f89ef89ffd6625e0b76ef8d1",
+  "model_and_selection_design_unchanged": true,
+  "repairs": [
+    "Exclude external evaluation countries from unlabeled composition donors in every nested fit, as required by original protocol;159 cached fits instead of87",
+    "Correct F30 real-interest and F33 credit/GDP metadata IDs",
+    "Static/endpoint variables receive no annual correlation, rather than floating-point near-zero values",
+    "Report includes normalized relative weights and existing redundancy diagnostics; no fit/selection formula changes",
+    "Use Matplotlib for standalone research figure; reporting only",
+    "Performance only: native inner predictions skip unused composition; canonical country-separable allocation runs on outer target country and once on final global core",
+    "Report-only additions: clarify32 active feature roles and stratify existing annual errors at2020; no selection or fitting changes",
+    "Post-score reporting only: display all three predeclared inner selection scores and clarify identical selected output; no numerical recomputation or choices changed",
+    "Browser QA: fix CSV-download string escaping and English spacing; report only",
+    "Report UI: exact feature-ID search avoids matches inside other features redundancy metadata"
+  ],
+  "original_protocol_retained": true,
+  "initial_repairs_before_pooling_scoring": true,
+  "performance_repair_at_utc": "2026-10-30T19:55:25.728685+00:00",
+  "partial_score_attempt": {
+    "interrupted": true,
+    "completed_inner_contexts": [
+      "FULL"
+    ],
+    "completed_outer_scores": false,
+    "reason": "Avoid unused worldwide sector allocation on every inner prediction",
+    "no_model_or_selection_changes": true
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "build": "feature-atlas-20261030-v1",
+  "source_study": "review/2026-10-30-b0-feature-reassessment",
+  "model_refit": false,
+  "public_url": "https://jianzbit.github.io/gfa-backcasting-atlas/feature-atlas/",
+  "counts": {
+    "features": 43,
+    "countries": 195,
+    "annual_source": 31,
+    "qualified_annual": 26,
+    "actual_annual": 22
+  },
+  "protected_files": [
+    {
+      "path": "review/2026-10-29-development-freeze/artifacts/B0_country_year.csv",
+      "sha256": "ca91fafdc8bc2e1f3d60105121823463a2130faaf0cb5815078e852675fefea1",
+      "unchanged": true
+    },
+    {
+      "path": "review/2026-10-29-development-freeze/artifacts/P1_05904_country_year.csv",
+      "sha256": "b9db05f308e5b7f4a86bea5d96e1bc2692867d2b716c8bbf997b52d095063e90",
+      "unchanged": true
+    },
+    {
+      "path": "research-site/showcase/data.js",
+      "sha256": "bc2a695aab2c0c7cd5ffad5fa5209c9dc3fbc948d333394f699f9d41b9f88da4",
+      "unchanged": true
+    },
+    {
+      "path": "research-site/showcase/atlas.js",
+      "sha256": "fcdf6b32c50d7591b79019518daf65ffb0d9576502da2ad389c6b253155c8e9f",
+      "unchanged": true
+    },
+    {
+      "path": "v7/shared_dynamic_stock.py",
+      "sha256": "a852909ae97bf3410044ff43fde8743189581e9f6bcbbd17401af38f64583b2a",
+      "unchanged": true
+    },
+    {
+      "path": "v7/backcast_observation_dynamic.py",
+      "sha256": "92837c20ce936a934727ac99f0a9b08e96e347e08e2c927897b85fd019cdf396",
+      "unchanged": true
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/fitted_model.json",
+      "sha256": "d1d72ad19f54a67e92c30b9d5684cfdf2732501af13b4cca2ae80c3097142d85",
+      "unchanged": true
+    }
+  ],
+  "files": [
+    {
+      "path": "downloads/category-vif.csv",
+      "sha256": "2cbc0e4e0937c91ce81939b59bf71bd50bb0102d8132e8ba54a6e4251e1c3703",
+      "bytes": 30792
+    },
+    {
+      "path": "downloads/change-pairs.csv",
+      "sha256": "0d131c364fa45fdc620e97ade3554dddecc64de5d2c57a862993e7e5edaa8c9b",
+      "bytes": 90270
+    },
+    {
+      "path": "downloads/country-coverage.csv",
+      "sha256": "23b6dfa7653a986d1956500410a533d2b0773721b06c780389ec74f48e7f90d2",
+      "bytes": 559705
+    },
+    {
+      "path": "downloads/country-sensitivity.csv",
+      "sha256": "3115f3cbc91ee0b17adc8362c1b575f3db38001b7ac1cd798054df0535eec057",
+      "bytes": 22535
+    },
+    {
+      "path": "downloads/engineering-checks.json",
+      "sha256": "6f501b51cc73f000d27e1c4e685bcb2b1492cf570917c009c69c2404ed5a2dd8",
+      "bytes": 444
+    },
+    {
+      "path": "downloads/frozen-protocol.json",
+      "sha256": "bad531f247e5d08dd585b1faf7d7800f3f62136458ff672f40d4f5fd719c3387",
+      "bytes": 6540
+    },
+    {
+      "path": "downloads/implementation-repairs.json",
+      "sha256": "06f2c92e131861e81a4493ffacce37ee925997f61fe0884b895cf15ddcc9c548",
+      "bytes": 1963
+    },
+    {
+      "path": "downloads/inner-weight-scores.csv",
+      "sha256": "250c6e92a20e180b293ca3e037987e6e5f8a7dab1e9e78ebdd7facfa82cd5d37",
+      "bytes": 8138
+    },
+    {
+      "path": "downloads/pairwise-correlations.csv",
+      "sha256": "54e12f5397a14ff649bd34f3efebca8e762598ed74b86cc9449d2edfa7aca8d8",
+      "bytes": 463971
+    },
+    {
+      "path": "downloads/reassessed-features.csv",
+      "sha256": "c98d307a68eba8f921edce67ae4d4ff132f94e0f6cf2159331015dab4831812d",
+      "bytes": 151920
+    },
+    {
+      "path": "downloads/reassessment-source.py",
+      "sha256": "f5f18962d7abcad2217cf5f1b6630c2de9e08db6f89ef89ffd6625e0b76ef8d1",
+      "bytes": 48569
+    },
+    {
+      "path": "downloads/reference-correlations.csv",
+      "sha256": "d928e024228c6ab3f8e037a538544a0404317164b990bc4c7ce754ee2e828c89",
+      "bytes": 24391
+    },
+    {
+      "path": "downloads/reference-evidence.csv",
+      "sha256": "b817fa66548650f7f6b7bda11bae0744e775ec775d4ece362f94f2e45eb124c2",
+      "bytes": 19458
+    },
+    {
+      "path": "downloads/single-feature-predictions.csv",
+      "sha256": "08f68263f78efaa1e6a0e2810491c787536f315eb3d4f79e669b550c6b5647fe",
+      "bytes": 386594
+    },
+    {
+      "path": "downloads/year-coverage.csv",
+      "sha256": "0a3ffbdd3b001f8ed8600e00ad15865eeb4c0304c01769f37938945dc3618f69",
+      "bytes": 96459
+    },
+    {
+      "path": "index.html",
+      "sha256": "4b161a64aebdf9553f847348704b928719d6cb2683d3410ed5f9c1f1718d0f5c",
+      "bytes": 629685
+    }
+  ]
+}
