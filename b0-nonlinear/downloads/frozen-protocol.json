@@ -1,0 +1,221 @@
+{
+  "id": "B0-asymmetric-response-crossed-20261030-v1",
+  "frozen_at_utc": "2026-10-30T21:41:23.485159+00:00",
+  "methods": {
+    "B0_legacy_linear": {
+      "input_policy": "legacy",
+      "nonlinear": false
+    },
+    "B0_legacy_hinge": {
+      "input_policy": "legacy",
+      "nonlinear": true
+    },
+    "B0_observed_linear": {
+      "input_policy": "observed",
+      "nonlinear": false
+    },
+    "B0_observed_hinge": {
+      "input_policy": "observed",
+      "nonlinear": true
+    }
+  },
+  "scope": "Controlled B0 development only. Not B2, not a causal shock model, no automatic promotion.",
+  "prior_work": "Do not repeat quadratic curvature or group-weight search. Reuse qualified observed-driver archive; isolate nonlinear effect with an identical-input control.",
+  "formula": "gR=h+0.01*x*beta+0.01*(gamma_A*H(A)+gamma_U*H(U)); gN=gR+0.01*beta_N*d; integrate net stocks from2020",
+  "basis": {
+    "type": "two shared one-knot linear regression splines",
+    "knot": 0,
+    "meaning": "Below versus above own historical-normal pooled annual departure; not GDP percentage zero and not a country/event dummy",
+    "formula": "H(x)=[max(-clip(x),0)-a*clip(x)]/s; a=E[x*max(-x,0)]/E[x*x]",
+    "extra_parameters": 2,
+    "total_parameters": 9,
+    "precision": [
+      9.0,
+      9.0
+    ],
+    "prior": [
+      0.0,
+      0.0
+    ],
+    "calibration": "2016\u20132020 training-country-only, label-free, country-balanced; no intercept so H(0)=0",
+    "support": "At least3 training countries, each with3 supported intervals, two-sided variation; otherwise disable term",
+    "tails": "Clamp only added term at training input envelope; retain base term; record extrapolation"
+  },
+  "information": {
+    "legacy": "Canonical B0 historical pooled signals and damped continuation",
+    "observed": "Existing WDI population, urban population, real GDP per capita, real GFCF; only existing annual axes updated after2020",
+    "lag": "Unchanged archived observed-driver distributed lag and causal post2020 smoothing",
+    "missing": "Qualified-source masks and explicit shared continuation, never missing-source zero",
+    "future": "Last available annual axis damped0.8; WUP horizontal path retained. No future crisis knowledge",
+    "conflict": "No refreshed post2020 conflict/damage input. War response cannot be inferred from missing observations",
+    "vintage": "Latest-vintage reported/estimated indicators; not origin-valid forecast inputs"
+  },
+  "fixed": [
+    "2020 anchors",
+    "R/NR allocation",
+    "country/source/channel information budgets",
+    "Huber scale and original7 penalties",
+    "training label deck",
+    "original source quality and fixed family weights"
+  ],
+  "training": {
+    "countries": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU"
+    ],
+    "country_exclusions": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU",
+      "FIN",
+      "JPN",
+      "NLD"
+    ],
+    "all_parameters_refit": true,
+    "held_country_labels_transforms_basis_and_donors_excluded": true,
+    "no_country_coefficients": true,
+    "no_hyperparameter_search": true,
+    "no_post_score_expansion": true
+  },
+  "scoring": {
+    "reference_status": "EXPOSED_DEVELOPMENT_NATIVE_SCOPE_DIAGNOSTICS",
+    "main": "Five-country native Total common2020anchor stock-increment error; country macro",
+    "annual_MAE_pp_limit": 0.5,
+    "annual_abs_bias_pp_limit": 0.2,
+    "fiveyear_MAE_pp_limit": 2.0,
+    "fiveyear_countries": "Four; no manufactured Finnish windows across publisher break",
+    "other": "Original RES and Total ratio channels scored separately, before and after sector allocation",
+    "breaks": "Reuse FIN2019\u201320 and KOR2015\u201316 publisher breaks",
+    "shock_window": "2020\u20132022 endpoints: descriptive exposure, not causal identification",
+    "deterioration": "Annual country MAE rise>0.1pp flags harm; experimental flag, not a new Spec rule",
+    "comparison": "Within identical-input pairs primary; input update contrasts separate; no selecting one model per country"
+  },
+  "freeze": "Complete and hash all model/prediction files before computing candidate national scores",
+  "literature": [
+    {
+      "title": "Forecasting: Principles and Practice / nonlinear regression",
+      "url": "https://otexts.com/fpp3/nonlinear-regression.html"
+    },
+    {
+      "title": "mgcv / basis dimension and penalized degrees of freedom",
+      "url": "https://stat.ethz.ch/R-manual/R-patched/library/mgcv/help/choose.k.html"
+    }
+  ],
+  "pre_fit_repair": {
+    "stage": "before any national fit or scoring",
+    "reason": "Synthetic intervention changed raw input but left its qualification mask false; the correct implementation ignored the unqualified value. Correct the test fixture to admit the synthetic observed value.",
+    "model_formula_changed": false,
+    "national_scores_seen": false,
+    "preserved_attempt": "pre_fit_attempt_01"
+  },
+  "protected_files": [
+    {
+      "path": "v7/shared_dynamic_stock.py",
+      "sha256": "a852909ae97bf3410044ff43fde8743189581e9f6bcbbd17401af38f64583b2a",
+      "bytes": 26170
+    },
+    {
+      "path": "v7/observed_driver_extension.py",
+      "sha256": "069779e4d382418992e4d7f37caf4ec0c34e11e495fc331ed755ca35d10de5f1",
+      "bytes": 14428
+    },
+    {
+      "path": "v7/dynamic_sector_composition.py",
+      "sha256": "ee2ee47e39ed6ad0efbcc2130a7e5756a2622bfafbd74eb715c286dc745bd2db",
+      "bytes": 11538
+    },
+    {
+      "path": "gfa_science_v2/reference_integration.py",
+      "sha256": "51a00c0c4a702e0840179943e7e5175e18a222d446139ce93434a34bb8b95f92",
+      "bytes": 45885
+    },
+    {
+      "path": "research-site/showcase/data.js",
+      "sha256": "bc2a695aab2c0c7cd5ffad5fa5209c9dc3fbc948d333394f699f9d41b9f88da4",
+      "bytes": 668672
+    },
+    {
+      "path": "research-site/showcase/atlas.js",
+      "sha256": "fcdf6b32c50d7591b79019518daf65ffb0d9576502da2ad389c6b253155c8e9f",
+      "bytes": 21847
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/fitted_model.json",
+      "sha256": "d1d72ad19f54a67e92c30b9d5684cfdf2732501af13b4cca2ae80c3097142d85",
+      "bytes": 22414
+    },
+    {
+      "path": "review/2026-10-29-development-freeze/artifacts/B0_country_year.csv",
+      "sha256": "ca91fafdc8bc2e1f3d60105121823463a2130faaf0cb5815078e852675fefea1",
+      "bytes": 3782498
+    },
+    {
+      "path": "review/2026-10-29-development-freeze/artifacts/P1_05904_country_year.csv",
+      "sha256": "b9db05f308e5b7f4a86bea5d96e1bc2692867d2b716c8bbf997b52d095063e90",
+      "bytes": 4811156
+    }
+  ],
+  "inputs": [
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/inputs/country_year_inputs_2015_2030.csv",
+      "sha256": "502488b8586f8f72ff833f074f5f41aa8f804131cbceeb492fafc4e259410232",
+      "bytes": 11690710
+    },
+    {
+      "path": "review/2026-10-21-observed-driver-development/candidate_inputs_2015_2030.csv",
+      "sha256": "59f2cfd3673c9f8f459580a347d5b49d07871c57bc3870c9a1e8c85c2625bcc5",
+      "bytes": 12863986
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/observations/development_observations.csv",
+      "sha256": "4e13cbd7443b7f57af7d3975b0fc4755f4cd01f1a6d22ad2372c5eebaee5af27",
+      "bytes": 77830
+    },
+    {
+      "path": "review/2026-10-16-shared-dynamic-stock-v16/inputs/factor_temporal_semantics.csv",
+      "sha256": "3dccabba3e5e4a44f192a76e22b89e9eedb9d0a2e55c1bf44c1ae8da9ba1ca89",
+      "bytes": 16375
+    },
+    {
+      "path": "review/2026-10-21-dynamic-sector-composition/annual_composition_source_paths.csv",
+      "sha256": "00d39a4e4f6a4f31ae83199739e070a2f4011e4e0986a4e30e602096655c40b4",
+      "bytes": 1394107
+    },
+    {
+      "path": "review/2026-10-29-five-country-validation/references.csv",
+      "sha256": "fdfef54eb9fa54f487540656fd0594416b51704b5f2e0bb44864bc9aa5f06fa8",
+      "bytes": 27825
+    },
+    {
+      "path": "review/2026-10-21-observed-driver-development/source/acquisition_receipts.json",
+      "sha256": "0c4b4708fa1bf434a61fca51ac019e00478f5923458842f9bfc5d0a683fe44df",
+      "bytes": 5553
+    }
+  ],
+  "implementation": [
+    {
+      "path": "scripts/run_b0_shock_response.py",
+      "sha256": "2e670b427fdabc576a70e4d470efffe1e6779230652e136ba97ef8106a79cdbc",
+      "bytes": 36609
+    },
+    {
+      "path": "gfa_science_v2/b0_shock_response.py",
+      "sha256": "47644afac98d0ba1f512f9a49df8a168d405275ba878c2d353b64b2749026a33",
+      "bytes": 10611
+    },
+    {
+      "path": "tests/test_b0_shock_response.py",
+      "sha256": "259d1237e4f6d380be713dc3852a624f0cb4fe97293917c264e43f00e6be86c5",
+      "bytes": 5442
+    }
+  ]
+}

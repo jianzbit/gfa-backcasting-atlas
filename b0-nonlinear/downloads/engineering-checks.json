@@ -1,0 +1,74 @@
+[
+  {
+    "method": "B0_legacy_linear",
+    "stage": "pre_allocation",
+    "rows": 3120,
+    "complete_countries": 194,
+    "anchor_exact": true,
+    "additive_stock": true,
+    "net_change_identity": true
+  },
+  {
+    "method": "B0_legacy_linear",
+    "stage": "post_allocation",
+    "rows": 3120,
+    "complete_countries": 194,
+    "anchor_exact": true,
+    "additive_stock": true,
+    "net_change_identity": true
+  },
+  {
+    "method": "B0_legacy_hinge",
+    "stage": "pre_allocation",
+    "rows": 3120,
+    "complete_countries": 194,
+    "anchor_exact": true,
+    "additive_stock": true,
+    "net_change_identity": true
+  },
+  {
+    "method": "B0_legacy_hinge",
+    "stage": "post_allocation",
+    "rows": 3120,
+    "complete_countries": 194,
+    "anchor_exact": true,
+    "additive_stock": true,
+    "net_change_identity": true
+  },
+  {
+    "method": "B0_observed_linear",
+    "stage": "pre_allocation",
+    "rows": 3120,
+    "complete_countries": 194,
+    "anchor_exact": true,
+    "additive_stock": true,
+    "net_change_identity": true
+  },
+  {
+    "method": "B0_observed_linear",
+    "stage": "post_allocation",
+    "rows": 3120,
+    "complete_countries": 194,
+    "anchor_exact": true,
+    "additive_stock": true,
+    "net_change_identity": true
+  },
+  {
+    "method": "B0_observed_hinge",
+    "stage": "pre_allocation",
+    "rows": 3120,
+    "complete_countries": 194,
+    "anchor_exact": true,
+    "additive_stock": true,
+    "net_change_identity": true
+  },
+  {
+    "method": "B0_observed_hinge",
+    "stage": "post_allocation",
+    "rows": 3120,
+    "complete_countries": 194,
+    "anchor_exact": true,
+    "additive_stock": true,
+    "net_change_identity": true
+  }
+]

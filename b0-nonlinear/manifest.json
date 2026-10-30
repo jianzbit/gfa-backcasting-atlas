@@ -1,0 +1,130 @@
+{
+  "id": "B0-nonlinear-team-report-20261030-v1",
+  "built_at_utc": "2026-10-30T21:59:32.441246+00:00",
+  "public_url": "https://jianzbit.github.io/gfa-backcasting-atlas/b0-nonlinear/",
+  "model_refit": false,
+  "scoring_recomputed": false,
+  "defaults_changed": false,
+  "study_manifest_sha256": "d83767c6f61add94092de3814eac829e6f8565a3e6b759a5752815a1da303e6b",
+  "protocol_sha256": "68cb246d48f6c0da728bc483a5fe12a9b3c9b8c34efae050607fcef7a6465f82",
+  "original_report_sha256": "6508efa8ebc79e48299d998be2fee40dda15545e3b0780439b8726c0e8e4ca6d",
+  "interactive_replay_lossless": true,
+  "interpretation": "Exposed native-definition development diagnostics; no global accuracy percentage or Spec PASS",
+  "files": [
+    {
+      "path": "downloads/B0_legacy_hinge-country-year.csv",
+      "sha256": "5c45037237c5c67cfc9fb89bf076d0010881004e805ca73aad586ace6769514e",
+      "bytes": 302393
+    },
+    {
+      "path": "downloads/B0_legacy_linear-country-year.csv",
+      "sha256": "e5966f88181a5c85c68093e3ff1cadc03af6054c9d4020ff5bc81d9a9876a71e",
+      "bytes": 302485
+    },
+    {
+      "path": "downloads/B0_observed_hinge-country-year.csv",
+      "sha256": "192b742968541fe7a802fa03490ee0ccc1762d99a229e50e5fa4f37205b07f69",
+      "bytes": 322972
+    },
+    {
+      "path": "downloads/B0_observed_linear-country-year.csv",
+      "sha256": "3492abeb6871ec170050499f21f1583884b2d8eb1b8e3e59a0ea942350b07a6e",
+      "bytes": 323103
+    },
+    {
+      "path": "downloads/annual-input-coverage.csv",
+      "sha256": "caefc482828f5f9197cd837b4bba41723980622259c1719afdafe40cea66075d",
+      "bytes": 512
+    },
+    {
+      "path": "downloads/change-pairs.csv",
+      "sha256": "1ca52c366aa68e382042ff7069137c88794e32e973ff0f615b6d4571d5cc9840",
+      "bytes": 176512
+    },
+    {
+      "path": "downloads/country-annual-mae.csv",
+      "sha256": "25551e1490181fed24cd2f9724e77462730fa29fda6c1b87a7119ab7b403ba9a",
+      "bytes": 478
+    },
+    {
+      "path": "downloads/country-metrics.csv",
+      "sha256": "af10071f0880dca424400da9d06435fec7461f98e87ebbeb137fc2fa2b8ec489",
+      "bytes": 7553
+    },
+    {
+      "path": "downloads/denmark-growth-contributions.csv",
+      "sha256": "232ba682cbddba16a202a5c07b76c723d14dd7bcf846b6750a38e00333567a3e",
+      "bytes": 458
+    },
+    {
+      "path": "downloads/engineering-checks.json",
+      "sha256": "612bca770a4149bc992b9eb4cf81babd27c6626d9bb7717160e4529ffbeb855b",
+      "bytes": 1683
+    },
+    {
+      "path": "downloads/era-metrics.csv",
+      "sha256": "ba46ad4db0165e4f3cb0ea2553e0ddf23f169446e562c5edbac5bcec91764ae8",
+      "bytes": 955
+    },
+    {
+      "path": "downloads/excluded-intervals.csv",
+      "sha256": "118cd307a12ea3d29697effbd81a592eeda1e7b5870d0861543e25d24cdfcc1e",
+      "bytes": 4077
+    },
+    {
+      "path": "downloads/fitted-coefficients.json",
+      "sha256": "4767e56845cf1ebaeaadc1ec6de2357cea8d4c9d497a115f6f6fdb7ea98edf78",
+      "bytes": 6868
+    },
+    {
+      "path": "downloads/frozen-protocol.json",
+      "sha256": "68cb246d48f6c0da728bc483a5fe12a9b3c9b8c34efae050607fcef7a6465f82",
+      "bytes": 8656
+    },
+    {
+      "path": "downloads/main-comparison.csv",
+      "sha256": "23febbe9703c6bd135420977d06bfad6a473792285a9a3aa65ff981901d44b40",
+      "bytes": 1496
+    },
+    {
+      "path": "downloads/mechanism-tests.py",
+      "sha256": "259d1237e4f6d380be713dc3852a624f0cb4fe97293917c264e43f00e6be86c5",
+      "bytes": 5442
+    },
+    {
+      "path": "downloads/native-channel-macro-scores.csv",
+      "sha256": "548210e9ae5373bd4b4b417a958ba56c66fa12ca66096bc6f6048d290d713cbd",
+      "bytes": 3037
+    },
+    {
+      "path": "downloads/nonlinear-response-source.py",
+      "sha256": "47644afac98d0ba1f512f9a49df8a168d405275ba878c2d353b64b2749026a33",
+      "bytes": 10611
+    },
+    {
+      "path": "downloads/observed-driver-source.py",
+      "sha256": "069779e4d382418992e4d7f37caf4ec0c34e11e495fc331ed755ca35d10de5f1",
+      "bytes": 14428
+    },
+    {
+      "path": "downloads/official-reference-series.csv",
+      "sha256": "fdfef54eb9fa54f487540656fd0594416b51704b5f2e0bb44864bc9aa5f06fa8",
+      "bytes": 27825
+    },
+    {
+      "path": "downloads/result-summary.json",
+      "sha256": "2f83819e6d50078bd2cef71991823220cc75dbee5ed9a836cd5bd8e1f8625828",
+      "bytes": 9040
+    },
+    {
+      "path": "downloads/training-time-support.json",
+      "sha256": "da9db0701ad4c0e784189600a72ce2bb7d61e927216f8df44065066bc900b608",
+      "bytes": 331
+    },
+    {
+      "path": "index.html",
+      "sha256": "a9dab36c85f477d3a00893167d608deab6eb6654499872aa36b9c778c6e93261",
+      "bytes": 483194
+    }
+  ]
+}

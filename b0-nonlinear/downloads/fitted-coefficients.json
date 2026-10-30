@@ -1,0 +1,282 @@
+{
+  "B0_legacy_linear": {
+    "coefficient_names": [
+      "shared_intercept",
+      "demand_period_mean",
+      "production_period_mean",
+      "background_dynamic_interaction",
+      "annual_activity_departure",
+      "annual_demand_departure",
+      "nonresidential_growth_departure"
+    ],
+    "coefficients": [
+      0.09573877430408657,
+      0.16687503554510374,
+      -0.06637289009501551,
+      -0.06017701699082461,
+      0.013141722815855631,
+      0.08612413817327233,
+      -0.0034154430411967363
+    ],
+    "input_policy": "legacy",
+    "nonlinear_enabled": false,
+    "ridge": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      9.0
+    ],
+    "local_working_edf": 0.8531579594792646,
+    "training_countries": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU"
+    ],
+    "training_observations": 53,
+    "excluded_countries": [],
+    "experiment": "B0_asymmetric_annual_response_20261030",
+    "frozen_checkpoint_sha256": "e3608fb8a6de96e087fdbedfa82eb155719c2801658150e00f8fc00eb06f1051"
+  },
+  "B0_legacy_hinge": {
+    "coefficient_names": [
+      "shared_intercept",
+      "demand_period_mean",
+      "production_period_mean",
+      "background_dynamic_interaction",
+      "annual_activity_departure",
+      "annual_demand_departure",
+      "nonresidential_growth_departure",
+      "activity_negative_departure_hinge",
+      "demand_negative_departure_hinge"
+    ],
+    "coefficients": [
+      0.08657118699060062,
+      0.16359372010801063,
+      -0.07133330536924799,
+      -0.05978007295884009,
+      0.013672292889174657,
+      0.08609315699895932,
+      -0.003442039220857365,
+      0.02059112874988109,
+      0.009516142259579634
+    ],
+    "input_policy": "legacy",
+    "nonlinear_enabled": true,
+    "ridge": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      9.0,
+      9.0,
+      9.0
+    ],
+    "nonlinear_basis": {
+      "activity": {
+        "enabled": true,
+        "training_support_countries": [
+          "CHL",
+          "DEU",
+          "DNK",
+          "KAZ",
+          "KGZ",
+          "KOR",
+          "ROU"
+        ],
+        "calibration_rows": 35,
+        "knot": 0.0,
+        "label_free": true,
+        "calibration_window": "2016\u20132020",
+        "disabled_reason": null,
+        "projection": -0.5337651110324243,
+        "residual_rms": 0.1475608547178525,
+        "lower": -0.7219075362176608,
+        "upper": 0.6586775702408849
+      },
+      "demand_shock": {
+        "enabled": true,
+        "training_support_countries": [
+          "CHL",
+          "DEU",
+          "DNK",
+          "KAZ",
+          "KGZ",
+          "KOR",
+          "ROU"
+        ],
+        "calibration_rows": 35,
+        "knot": 0.0,
+        "label_free": true,
+        "calibration_window": "2016\u20132020",
+        "disabled_reason": null,
+        "projection": -0.5555599959829696,
+        "residual_rms": 0.12673543133594103,
+        "lower": -0.570030029564736,
+        "upper": 0.5095089233648777
+      }
+    },
+    "local_working_edf": 0.9153573359741294,
+    "training_countries": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU"
+    ],
+    "training_observations": 53,
+    "excluded_countries": [],
+    "experiment": "B0_asymmetric_annual_response_20261030",
+    "frozen_checkpoint_sha256": "8ec5b7372a2a3e167e9e6ecd1998497def4cc4233aabd1e96ded8cb1701ba38e"
+  },
+  "B0_observed_linear": {
+    "coefficient_names": [
+      "shared_intercept",
+      "demand_period_mean",
+      "production_period_mean",
+      "background_dynamic_interaction",
+      "annual_activity_departure",
+      "annual_demand_departure",
+      "nonresidential_growth_departure"
+    ],
+    "coefficients": [
+      0.09488242244039179,
+      0.16649779747903343,
+      -0.06748810406114947,
+      -0.06098744284558555,
+      0.01642864691311208,
+      0.0012983135097626784,
+      -0.003474556393719888
+    ],
+    "input_policy": "observed",
+    "nonlinear_enabled": false,
+    "ridge": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      9.0
+    ],
+    "local_working_edf": 0.8596779979185497,
+    "training_countries": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU"
+    ],
+    "training_observations": 53,
+    "excluded_countries": [],
+    "experiment": "B0_asymmetric_annual_response_20261030",
+    "frozen_checkpoint_sha256": "d869607614d50323b12832ed266d5eda39b67dc97164a1f3a3385a15601b1c15"
+  },
+  "B0_observed_hinge": {
+    "coefficient_names": [
+      "shared_intercept",
+      "demand_period_mean",
+      "production_period_mean",
+      "background_dynamic_interaction",
+      "annual_activity_departure",
+      "annual_demand_departure",
+      "nonresidential_growth_departure",
+      "activity_negative_departure_hinge",
+      "demand_negative_departure_hinge"
+    ],
+    "coefficients": [
+      0.10908049282418428,
+      0.1721438943959775,
+      -0.05934438765583499,
+      -0.05986983315616809,
+      0.01573766925158444,
+      0.002087103059631399,
+      -0.0033332723430331158,
+      -0.0215395649083033,
+      -0.01439318387323143
+    ],
+    "input_policy": "observed",
+    "nonlinear_enabled": true,
+    "ridge": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      9.0,
+      9.0,
+      9.0
+    ],
+    "nonlinear_basis": {
+      "activity": {
+        "enabled": true,
+        "training_support_countries": [
+          "CHL",
+          "DEU",
+          "DNK",
+          "KAZ",
+          "KGZ",
+          "KOR",
+          "ROU"
+        ],
+        "calibration_rows": 35,
+        "knot": 0.0,
+        "label_free": true,
+        "calibration_window": "2016\u20132020",
+        "disabled_reason": null,
+        "projection": -0.5337651110324243,
+        "residual_rms": 0.1475608547178525,
+        "lower": -0.7219075362176608,
+        "upper": 0.6586775702408849
+      },
+      "demand_shock": {
+        "enabled": true,
+        "training_support_countries": [
+          "CHL",
+          "DEU",
+          "DNK",
+          "KAZ",
+          "KGZ",
+          "KOR",
+          "ROU"
+        ],
+        "calibration_rows": 35,
+        "knot": 0.0,
+        "label_free": true,
+        "calibration_window": "2016\u20132020",
+        "disabled_reason": null,
+        "projection": -0.5555599959829696,
+        "residual_rms": 0.12673543133594103,
+        "lower": -0.570030029564736,
+        "upper": 0.5095089233648777
+      }
+    },
+    "local_working_edf": 0.967349819808275,
+    "training_countries": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU"
+    ],
+    "training_observations": 53,
+    "excluded_countries": [],
+    "experiment": "B0_asymmetric_annual_response_20261030",
+    "frozen_checkpoint_sha256": "9f43f57862b4ddb9e59558b033b1c81a2880949f7e1c07e0e2e18efe34e969e1"
+  }
+}

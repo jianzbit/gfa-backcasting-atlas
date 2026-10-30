@@ -1,0 +1,293 @@
+{
+  "at_utc": "2026-10-30T21:48:16.322440+00:00",
+  "comparison": [
+    {
+      "method": "B0_legacy_hinge",
+      "mode": "common_2020_anchor",
+      "horizon_years": 1,
+      "required_countries": 5,
+      "complete_countries": 5,
+      "complete_five_country_panel": true,
+      "country_macro_MAE_pp": 1.0140397753525767,
+      "country_macro_bias_pp": 0.6867219976071739,
+      "worst_country_MAE_pp": 1.8246027928815822,
+      "available_domain_country_ids": [
+        "DNK",
+        "FIN",
+        "JPN",
+        "KOR",
+        "NLD"
+      ],
+      "available_domain_macro_MAE_pp": 1.0140397753525767,
+      "full_physical_GFA_accuracy_claim": false,
+      "scientific_gate_status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "method": "B0_legacy_hinge",
+      "mode": "common_2020_anchor",
+      "horizon_years": 5,
+      "required_countries": 5,
+      "complete_countries": 4,
+      "complete_five_country_panel": false,
+      "country_macro_MAE_pp": null,
+      "country_macro_bias_pp": null,
+      "worst_country_MAE_pp": null,
+      "available_domain_country_ids": [
+        "DNK",
+        "JPN",
+        "KOR",
+        "NLD"
+      ],
+      "available_domain_macro_MAE_pp": 3.3770919376856137,
+      "full_physical_GFA_accuracy_claim": false,
+      "scientific_gate_status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "method": "B0_legacy_linear",
+      "mode": "common_2020_anchor",
+      "horizon_years": 1,
+      "required_countries": 5,
+      "complete_countries": 5,
+      "complete_five_country_panel": true,
+      "country_macro_MAE_pp": 1.0147613852465704,
+      "country_macro_bias_pp": 0.6738450526902051,
+      "worst_country_MAE_pp": 1.828667656987354,
+      "available_domain_country_ids": [
+        "DNK",
+        "FIN",
+        "JPN",
+        "KOR",
+        "NLD"
+      ],
+      "available_domain_macro_MAE_pp": 1.0147613852465704,
+      "full_physical_GFA_accuracy_claim": false,
+      "scientific_gate_status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "method": "B0_legacy_linear",
+      "mode": "common_2020_anchor",
+      "horizon_years": 5,
+      "required_countries": 5,
+      "complete_countries": 4,
+      "complete_five_country_panel": false,
+      "country_macro_MAE_pp": null,
+      "country_macro_bias_pp": null,
+      "worst_country_MAE_pp": null,
+      "available_domain_country_ids": [
+        "DNK",
+        "JPN",
+        "KOR",
+        "NLD"
+      ],
+      "available_domain_macro_MAE_pp": 3.3528530479718697,
+      "full_physical_GFA_accuracy_claim": false,
+      "scientific_gate_status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "method": "B0_observed_hinge",
+      "mode": "common_2020_anchor",
+      "horizon_years": 1,
+      "required_countries": 5,
+      "complete_countries": 5,
+      "complete_five_country_panel": true,
+      "country_macro_MAE_pp": 1.0153121329230461,
+      "country_macro_bias_pp": 0.6670818631222433,
+      "worst_country_MAE_pp": 1.8021587089686677,
+      "available_domain_country_ids": [
+        "DNK",
+        "FIN",
+        "JPN",
+        "KOR",
+        "NLD"
+      ],
+      "available_domain_macro_MAE_pp": 1.0153121329230461,
+      "full_physical_GFA_accuracy_claim": false,
+      "scientific_gate_status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "method": "B0_observed_hinge",
+      "mode": "common_2020_anchor",
+      "horizon_years": 5,
+      "required_countries": 5,
+      "complete_countries": 4,
+      "complete_five_country_panel": false,
+      "country_macro_MAE_pp": null,
+      "country_macro_bias_pp": null,
+      "worst_country_MAE_pp": null,
+      "available_domain_country_ids": [
+        "DNK",
+        "JPN",
+        "KOR",
+        "NLD"
+      ],
+      "available_domain_macro_MAE_pp": 3.4397267369628275,
+      "full_physical_GFA_accuracy_claim": false,
+      "scientific_gate_status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "method": "B0_observed_linear",
+      "mode": "common_2020_anchor",
+      "horizon_years": 1,
+      "required_countries": 5,
+      "complete_countries": 5,
+      "complete_five_country_panel": true,
+      "country_macro_MAE_pp": 1.013570520586782,
+      "country_macro_bias_pp": 0.6720030365321754,
+      "worst_country_MAE_pp": 1.8270625265013856,
+      "available_domain_country_ids": [
+        "DNK",
+        "FIN",
+        "JPN",
+        "KOR",
+        "NLD"
+      ],
+      "available_domain_macro_MAE_pp": 1.013570520586782,
+      "full_physical_GFA_accuracy_claim": false,
+      "scientific_gate_status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "method": "B0_observed_linear",
+      "mode": "common_2020_anchor",
+      "horizon_years": 5,
+      "required_countries": 5,
+      "complete_countries": 4,
+      "complete_five_country_panel": false,
+      "country_macro_MAE_pp": null,
+      "country_macro_bias_pp": null,
+      "worst_country_MAE_pp": null,
+      "available_domain_country_ids": [
+        "DNK",
+        "JPN",
+        "KOR",
+        "NLD"
+      ],
+      "available_domain_macro_MAE_pp": 3.3533319189821187,
+      "full_physical_GFA_accuracy_claim": false,
+      "scientific_gate_status": "DIAGNOSTIC_ONLY"
+    }
+  ],
+  "contrasts": [
+    {
+      "comparison": "Nonlinear response / legacy inputs",
+      "control": "B0_legacy_linear",
+      "candidate": "B0_legacy_hinge",
+      "horizon": 1,
+      "MAE_gain_pp": 0.0007216098939937243,
+      "candidate_bias_pp": 0.6867219976071739,
+      "annual_improved_countries": 3,
+      "annual_worsened_countries": 2,
+      "annual_deterioration_over_point1_pp": []
+    },
+    {
+      "comparison": "Nonlinear response / legacy inputs",
+      "control": "B0_legacy_linear",
+      "candidate": "B0_legacy_hinge",
+      "horizon": 5,
+      "MAE_gain_pp": -0.024238889713743994,
+      "candidate_bias_pp": null,
+      "annual_improved_countries": 3,
+      "annual_worsened_countries": 2,
+      "annual_deterioration_over_point1_pp": []
+    },
+    {
+      "comparison": "Nonlinear response / updated inputs",
+      "control": "B0_observed_linear",
+      "candidate": "B0_observed_hinge",
+      "horizon": 1,
+      "MAE_gain_pp": -0.0017416123362641311,
+      "candidate_bias_pp": 0.6670818631222433,
+      "annual_improved_countries": 3,
+      "annual_worsened_countries": 2,
+      "annual_deterioration_over_point1_pp": []
+    },
+    {
+      "comparison": "Nonlinear response / updated inputs",
+      "control": "B0_observed_linear",
+      "candidate": "B0_observed_hinge",
+      "horizon": 5,
+      "MAE_gain_pp": -0.0863948179807088,
+      "candidate_bias_pp": null,
+      "annual_improved_countries": 3,
+      "annual_worsened_countries": 2,
+      "annual_deterioration_over_point1_pp": []
+    },
+    {
+      "comparison": "Annual input update / linear response",
+      "control": "B0_legacy_linear",
+      "candidate": "B0_observed_linear",
+      "horizon": 1,
+      "MAE_gain_pp": 0.0011908646597884598,
+      "candidate_bias_pp": 0.6720030365321754,
+      "annual_improved_countries": 4,
+      "annual_worsened_countries": 1,
+      "annual_deterioration_over_point1_pp": []
+    },
+    {
+      "comparison": "Annual input update / linear response",
+      "control": "B0_legacy_linear",
+      "candidate": "B0_observed_linear",
+      "horizon": 5,
+      "MAE_gain_pp": -0.0004788710102490157,
+      "candidate_bias_pp": null,
+      "annual_improved_countries": 4,
+      "annual_worsened_countries": 1,
+      "annual_deterioration_over_point1_pp": []
+    },
+    {
+      "comparison": "Annual input update / nonlinear response",
+      "control": "B0_legacy_hinge",
+      "candidate": "B0_observed_hinge",
+      "horizon": 1,
+      "MAE_gain_pp": -0.0012723575704693957,
+      "candidate_bias_pp": 0.6670818631222433,
+      "annual_improved_countries": 3,
+      "annual_worsened_countries": 2,
+      "annual_deterioration_over_point1_pp": []
+    },
+    {
+      "comparison": "Annual input update / nonlinear response",
+      "control": "B0_legacy_hinge",
+      "candidate": "B0_observed_hinge",
+      "horizon": 5,
+      "MAE_gain_pp": -0.06263479927721383,
+      "candidate_bias_pp": null,
+      "annual_improved_countries": 3,
+      "annual_worsened_countries": 2,
+      "annual_deterioration_over_point1_pp": []
+    }
+  ],
+  "all_nonlinear_primary_errors_improved": false,
+  "trajectory_flags": [
+    {
+      "method": "B0_legacy_linear",
+      "rate_flags": 10,
+      "jump_flags": 6,
+      "flagged_countries": 6
+    },
+    {
+      "method": "B0_legacy_hinge",
+      "rate_flags": 10,
+      "jump_flags": 6,
+      "flagged_countries": 6
+    },
+    {
+      "method": "B0_observed_linear",
+      "rate_flags": 10,
+      "jump_flags": 6,
+      "flagged_countries": 6
+    },
+    {
+      "method": "B0_observed_hinge",
+      "rate_flags": 10,
+      "jump_flags": 6,
+      "flagged_countries": 6
+    }
+  ],
+  "engineering": "PASS",
+  "diagnostics": "EXPOSED_DEVELOPMENT_COMPARISON",
+  "independent_scientific_validation": "INSUFFICIENT_EVIDENCE",
+  "global_accuracy_percent": null,
+  "decision": "Retain operational B0. Preserve all four research comparisons; no automatic model promotion or per-country model picking.",
+  "no_post_score_retuning": true,
+  "defaults_changed": false
+}

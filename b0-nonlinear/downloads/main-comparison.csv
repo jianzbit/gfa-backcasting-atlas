@@ -1,0 +1,9 @@
+method,mode,horizon_years,required_countries,complete_countries,complete_five_country_panel,country_macro_MAE_pp,country_macro_bias_pp,worst_country_MAE_pp,available_domain_country_ids,available_domain_macro_MAE_pp,full_physical_GFA_accuracy_claim,scientific_gate_status
+B0_legacy_hinge,common_2020_anchor,1,5,5,True,1.0140397753525767,0.6867219976071739,1.8246027928815822,"['DNK', 'FIN', 'JPN', 'KOR', 'NLD']",1.0140397753525767,False,DIAGNOSTIC_ONLY
+B0_legacy_hinge,common_2020_anchor,5,5,4,False,,,,"['DNK', 'JPN', 'KOR', 'NLD']",3.3770919376856137,False,DIAGNOSTIC_ONLY
+B0_legacy_linear,common_2020_anchor,1,5,5,True,1.0147613852465704,0.6738450526902051,1.828667656987354,"['DNK', 'FIN', 'JPN', 'KOR', 'NLD']",1.0147613852465704,False,DIAGNOSTIC_ONLY
+B0_legacy_linear,common_2020_anchor,5,5,4,False,,,,"['DNK', 'JPN', 'KOR', 'NLD']",3.3528530479718697,False,DIAGNOSTIC_ONLY
+B0_observed_hinge,common_2020_anchor,1,5,5,True,1.0153121329230461,0.6670818631222433,1.8021587089686677,"['DNK', 'FIN', 'JPN', 'KOR', 'NLD']",1.0153121329230461,False,DIAGNOSTIC_ONLY
+B0_observed_hinge,common_2020_anchor,5,5,4,False,,,,"['DNK', 'JPN', 'KOR', 'NLD']",3.4397267369628275,False,DIAGNOSTIC_ONLY
+B0_observed_linear,common_2020_anchor,1,5,5,True,1.013570520586782,0.6720030365321754,1.8270625265013856,"['DNK', 'FIN', 'JPN', 'KOR', 'NLD']",1.013570520586782,False,DIAGNOSTIC_ONLY
+B0_observed_linear,common_2020_anchor,5,5,4,False,,,,"['DNK', 'JPN', 'KOR', 'NLD']",3.3533319189821187,False,DIAGNOSTIC_ONLY

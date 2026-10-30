@@ -1,0 +1,18 @@
+{
+  "nonanchor_labels": 53,
+  "countries_by_era": {
+    "through2020": [
+      "CHL",
+      "DEU",
+      "DNK",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "ROU"
+    ],
+    "post2020": [
+      "DNK"
+    ]
+  },
+  "interpretation": "Sparse post2020 stock labels limit learned shock response even when new annual predictors exist"
+}
